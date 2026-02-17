@@ -1,2 +1,2 @@
 # omniverse-multypurpose-theme
-# by zynxsol.com
+# by zynxsol
