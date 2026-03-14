@@ -1,0 +1,287 @@
+
+// ------------------------------------------------------------------------------------
+// DN METABOXES
+// ------------------------------------------------------------------------------------
+
+@if $general {
+
+	// OPTION ICON
+
+	// .dn-option-icon {
+
+	// 	label {
+
+	// 		&:before {
+	// 			position: relative;
+	// 			margin-right: 2px;
+	// 			color: #AAA;
+	// 			font-weight: 400;
+	// 			font-size: 18px;
+	// 			font-family: dashicons;
+	// 		}
+	// 	}
+	// }
+
+	// .dn-option-icon-desktop {
+
+	// 	label {
+
+	// 		&:before {
+	// 			content: "\f472";
+	// 		}
+	// 	}
+	// }
+
+	// .dn-option-icon-tablet {
+
+	// 	label {
+
+	// 		&:before {
+	// 			content: "\f471";
+	// 		}
+	// 	}
+	// }
+
+	// .dn-option-icon-mobile {
+
+	// 	label {
+
+	// 		&:before {
+	// 			content: "\f470";
+	// 		}
+	// 	}
+	// }
+
+	// ------------------------------------------
+	// HELPERS
+	// ------------------------------------------
+
+	// SHOW-HIDE ELEMENTS
+
+	.dn-shown {
+		display: block;
+	}
+
+	.dn-hidden {
+		display: none !important;
+	}
+
+	// ------------------------------------------
+	// GRID
+	// ------------------------------------------
+
+	.dn-row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -15px;
+		margin-bottom: -30px;
+		margin-left: -15px;
+		// width: 100%;
+	}
+
+	// [class*="dn-col"] {
+	// 	position: relative;
+	// 	margin-bottom: 30px;
+	// 	padding-right: 15px;
+	// 	padding-left: 15px;
+	// 	width: 100%;
+	// }
+
+	.dn-col,
+	.dn-col-auto,
+	.dn-col-4,
+	.dn-col-6,
+	.dn-col-8,
+	.dn-col-12,
+	.dn-col-lg-3,
+	.dn-col-lg-4,
+	.dn-col-lg-8,
+	.dn-col-xl-2,
+	.dn-col-xl-3,
+	.dn-col-xl-4,
+	.dn-col-xl-5,
+	.dn-col-xl-6,
+	.dn-col-xl-7,
+	.dn-col-xl-8 {
+		position: relative;
+		margin-bottom: 30px;
+		padding-right: 15px;
+		padding-left: 15px;
+		width: 100%;
+	}
+
+	.dn-col {
+		flex-grow: 1;
+		flex-basis: 0;
+		max-width: 100%;
+	}
+
+	.dn-col-auto {
+		flex: 0 0 auto;
+		max-width: none;
+		width: auto;
+	}
+
+	.dn-col-4 {
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+	}
+
+	.dn-col-6 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
+	.dn-col-8 {
+		flex: 0 0 66.666667%;
+		max-width: 66.666667%;
+	}
+
+	.dn-col-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	@media (min-width: 1025px) {
+
+		.dn-col-lg-3 {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+
+		.dn-col-lg-4 {
+			flex: 0 0 33.333333%;
+			max-width: 33.333333%;
+		}
+
+		.dn-col-lg-6 {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+
+		.dn-col-lg-8 {
+			flex: 0 0 66.666667%;
+			max-width: 66.666667%;
+		}
+	}
+
+	@media (min-width: 1200px) {
+
+		.dn-col-xl-2 {
+			flex: 0 0 20%;
+			max-width: 20%;
+		}
+
+		.dn-col-xl-3 {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+
+		.dn-col-xl-4 {
+			flex: 0 0 33.333333%;
+			max-width: 33.333333%;
+		}
+
+		.dn-col-xl-5 {
+			flex: 0 0 41.666667%;
+			max-width: 41.666667%;
+		}
+
+		.dn-col-xl-6 {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+
+		.dn-col-xl-7 {
+			flex: 0 0 58.333333%;
+			max-width: 58.333333%;
+		}
+
+		.dn-col-xl-8 {
+			flex: 0 0 66.666667%;
+			max-width: 66.666667%;
+		}
+	}
+
+	//**** SPACING ****//
+
+	[class*="dn-sp-"] {
+		margin-right: calc((var(--dn-sp) / 2) * -1);
+		margin-bottom: calc(var(--dn-sp) * -1);
+		margin-left: calc((var(--dn-sp) / 2) * -1);
+
+		--dn-sp: .001px;
+
+		> [class*="col"] {
+			margin-bottom: var(--dn-sp);
+			padding-right: calc(var(--dn-sp) / 2);
+			padding-left: calc(var(--dn-sp) / 2);
+		}
+	}
+
+	@each $space in 0, 10, 15, 20, 30 {
+
+		.dn-sp-#{$space} {
+			--dn-sp: #{$space}px;
+		}
+	}
+
+	// ------------------------------------------
+	// ALIGN
+	// ------------------------------------------
+
+	.dn-align-center {
+		text-align: center;
+	}
+
+	// ------------------------------------------
+	// Z-INDEX
+	// ------------------------------------------
+
+	// .dn-z-index-10 {
+	// 	z-index: 10;
+	// }
+
+	// ------------------------------------------------------------------------------------------------
+	// RESPONSIVE
+	// ------------------------------------------------------------------------------------------------
+
+	// ------------------------------------------
+	// MEDIA 1441 AND UP
+	// ------------------------------------------
+
+	// @mixin R-XXL-UP__helpers {
+
+		// .dn-col-xxl-9,
+		// .dn-col-xxl-3 {
+		// 	flex-grow: 1;
+		// }
+
+		// .dn-col-xxl-9 {
+		// 	flex-basis: 75%;
+		// }
+
+		// .dn-col-xxl-3 {
+		// 	flex-basis: 25%;
+		// }
+	// }
+
+} // END IF
+
+// ------------------------------------------
+// MEDIA 1200 AND UP
+// ------------------------------------------
+
+@mixin R-XL-UP__helpers {
+
+	@if $general {
+
+		.dn-col-4 {
+			flex-basis: 33.33333%;
+		}
+
+		.dn-col-6 {
+			flex-basis: 50%;
+		}
+	}
+}

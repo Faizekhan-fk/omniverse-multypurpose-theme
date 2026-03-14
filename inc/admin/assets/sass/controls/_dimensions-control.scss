@@ -1,0 +1,32 @@
+// ------------------------------------------------------------------------------------------------
+// DIMENSIONS CONTROL
+// ------------------------------------------------------------------------------------------------
+
+@if $cont-dimentions-control {
+
+	.dn-image_dimensions-control {
+		align-items: flex-end;
+		flex-wrap: wrap;
+
+		&:not(.dn-hidden) {
+			display: flex;
+		}
+
+		:is(
+		label,
+		.dn-field-description) {
+			width: 100%;
+		}
+
+		.dn-image-dimensions-field {
+			width: (var(--dn-input-width) / 2) - 15px;
+		}
+
+		.dn-image-dimensions-separator {
+			margin-bottom: 10px;
+			width: 30px;
+			text-align: center;
+		}
+	}
+
+} // END IF

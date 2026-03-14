@@ -1,0 +1,1088 @@
+<?php
+/**
+ * Promo banner map.
+ *
+ * @package Omniverse
+ */
+
+namespace DN\Elementor;
+
+use Elementor\Group_Control_Image_Size;
+use Elementor\Group_Control_Typography;
+use Elementor\Modules\DynamicTags\Module as TagsModule;
+use Elementor\Utils;
+use Elementor\Widget_Base;
+use Elementor\Controls_Manager;
+use Elementor\Plugin;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Direct access not allowed.
+}
+
+/**
+ * Elementor widget that inserts an embeddable content into the page, from any given URL.
+ *
+ * @since 1.0.0
+ */
+class Banner extends Widget_Base {
+	/**
+	 * Get widget name.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Widget name.
+	 */
+	public function get_name() {
+		return 'wd_banner';
+	}
+
+	/**
+	 * Get widget title.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Widget title.
+	 */
+	public function get_title() {
+		return esc_html__( 'Promo Banner', 'omniverse' );
+	}
+
+	/**
+	 * Get widget icon.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Widget icon.
+	 */
+	public function get_icon() {
+		return 'wd-icon-banner';
+	}
+
+	/**
+	 * Get widget categories.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return array Widget categories.
+	 */
+	public function get_categories() {
+		return array( 'wd-elements' );
+	}
+
+	/**
+	 * Register the widget controls.
+	 *
+	 * @since 1.0.0
+	 * @access protected
+	 */
+	protected function register_controls() {
+		/**
+		 * Content tab.
+		 */
+
+		/**
+		 * General settings.
+		 */
+		$this->start_controls_section(
+			'general_content_section',
+			array(
+				'label' => esc_html__( 'General', 'omniverse' ),
+			)
+		);
+
+		$this->add_control(
+			'link',
+			array(
+				'label'       => esc_html__( 'Link', 'omniverse' ),
+				'description' => esc_html__( 'Enter URL if you want this banner to have a link.', 'omniverse' ),
+				'type'        => Controls_Manager::URL,
+				'default'     => array(
+					'url'         => '#',
+					'is_external' => false,
+					'nofollow'    => false,
+				),
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Image settings.
+		 */
+		$this->start_controls_section(
+			'image_content_section',
+			array(
+				'label' => esc_html__( 'Background', 'omniverse' ),
+			)
+		);
+
+		$this->add_control(
+			'source_type',
+			array(
+				'label'   => esc_html__( 'Source', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'image' => esc_html__( 'Image', 'omniverse' ),
+					'video' => esc_html__( 'Video', 'omniverse' ),
+				),
+				'default' => 'image',
+			)
+		);
+
+		$this->add_control(
+			'video',
+			array(
+				'label'      => esc_html__( 'Choose video', 'omniverse' ),
+				'type'       => Controls_Manager::MEDIA,
+				'media_type' => 'video',
+				'condition'  => array(
+					'source_type' => 'video',
+				),
+			)
+		);
+
+		$this->add_control(
+			'video_poster',
+			array(
+				'label'     => esc_html__( 'Fallback image', 'omniverse' ),
+				'type'      => Controls_Manager::MEDIA,
+				'condition' => array(
+					'source_type' => 'video',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Image_Size::get_type(),
+			array(
+				'name'           => 'video_poster',
+				'fields_options' => array(
+					'size'             => array(
+						'label' => esc_html__( 'Fallback image size', 'omniverse' ),
+					),
+					'custom_dimension' => array(
+						'label' => esc_html__( 'Fallback image Dimension', 'omniverse' ),
+					),
+				),
+				'default'        => 'full',
+				'separator'      => 'none',
+				'condition'      => array(
+					'source_type' => 'video',
+				),
+			)
+		);
+
+		$this->add_control(
+			'image',
+			array(
+				'label'     => esc_html__( 'Choose image', 'omniverse' ),
+				'type'      => Controls_Manager::MEDIA,
+				'default'   => array(
+					'url' => Utils::get_placeholder_image_src(),
+				),
+				'condition' => array(
+					'source_type' => 'image',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Image_Size::get_type(),
+			array(
+				'name'      => 'image',
+				'default'   => 'thumbnail',
+				'separator' => 'none',
+				'condition' => array(
+					'source_type' => 'image',
+				),
+			)
+		);
+
+		$this->add_control(
+			'custom_height',
+			array(
+				'label'        => esc_html__( 'Fixed height', 'omniverse' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'omniverse' ),
+				'label_off'    => esc_html__( 'No', 'omniverse' ),
+				'return_value' => 'Yes',
+			)
+		);
+
+		$this->add_responsive_control(
+			'image_height',
+			array(
+				'label'     => esc_html__( 'Banner height', 'omniverse' ),
+				'type'      => Controls_Manager::SLIDER,
+				'default'   => array(
+					'size' => 340,
+				),
+				'range'     => array(
+					'px' => array(
+						'min'  => 100,
+						'max'  => 2000,
+						'step' => 1,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}}' => '--wd-img-height: {{SIZE}}{{UNIT}};',
+				),
+				'condition' => array(
+					'custom_height' => array( 'Yes' ),
+				),
+			)
+		);
+
+		$this->add_control(
+			'image_bg_position',
+			array(
+				'label'     => esc_html__( 'Image Position', 'omniverse' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => array(
+					'center center' => esc_html__( 'Center', 'omniverse' ),
+					'center top'    => esc_html__( 'Top', 'omniverse' ),
+					'center bottom' => esc_html__( 'Bottom', 'omniverse' ),
+					'left center'   => esc_html__( 'Left', 'omniverse' ),
+					'right center'  => esc_html__( 'Right', 'omniverse' ),
+				),
+				'default'   => 'center center',
+				'selectors' => array(
+					'{{WRAPPER}} .banner-image' => 'object-position: {{VALUE}};',
+				),
+				'condition' => array(
+					'custom_height' => array( 'Yes' ),
+					'source_type'   => 'image',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Content settings.
+		 */
+		$this->start_controls_section(
+			'content_section',
+			array(
+				'label' => esc_html__( 'Content', 'omniverse' ),
+			)
+		);
+
+		$this->add_control(
+			'subtitle',
+			array(
+				'label'   => esc_html__( 'Subtitle', 'omniverse' ),
+				'type'    => Controls_Manager::TEXTAREA,
+				'default' => 'Banner subtitle text',
+			)
+		);
+
+		$this->add_control(
+			'title',
+			array(
+				'label'   => esc_html__( 'Title', 'omniverse' ),
+				'type'    => Controls_Manager::TEXTAREA,
+				'default' => 'Banner title, click to edit.',
+			)
+		);
+
+		$this->add_control(
+			'content',
+			array(
+				'label'   => esc_html__( 'Content', 'omniverse' ),
+				'type'    => Controls_Manager::WYSIWYG,
+				'default' => 'Banner content text',
+			)
+		);
+
+		$this->add_control(
+			'btn_text',
+			array(
+				'label'   => esc_html__( 'Button text', 'omniverse' ),
+				'type'    => Controls_Manager::TEXT,
+				'default' => 'Read more',
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Countdown settings.
+		 */
+		$this->start_controls_section(
+			'countdown_section',
+			array(
+				'label' => esc_html__( 'Countdown', 'omniverse' ),
+			)
+		);
+
+		$this->add_control(
+			'show_countdown',
+			array(
+				'label'        => esc_html__( 'Show countdown', 'omniverse' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'omniverse' ),
+				'label_off'    => esc_html__( 'No', 'omniverse' ),
+				'return_value' => 'yes',
+			)
+		);
+
+		$this->add_control(
+			'date',
+			array(
+				'label'   => esc_html__( 'Date', 'omniverse' ),
+				'type'    => Controls_Manager::DATE_TIME,
+				'default' => date( 'Y-m-d', strtotime( ' +2 months' ) ),
+				'condition' => array(
+					'show_countdown' => array( 'yes' ),
+				),
+			)
+		);
+
+		$this->add_control(
+			'hide_countdown_on_finish',
+			array(
+				'label'        => esc_html__( 'Hide countdown on finish', 'omniverse' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'omniverse' ),
+				'label_off'    => esc_html__( 'No', 'omniverse' ),
+				'return_value' => 'yes',
+				'condition'    => array(
+					'show_countdown' => array( 'yes' ),
+				),
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Style tab.
+		 */
+
+		/**
+		 * General settings.
+		 */
+		$this->start_controls_section(
+			'general_style_section',
+			array(
+				'label' => esc_html__( 'General', 'omniverse' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'style',
+			array(
+				'label'       => esc_html__( 'Style', 'omniverse' ),
+				'description' => esc_html__( 'You can use some of our predefined styles for your banner content.', 'omniverse' ),
+				'type'        => Controls_Manager::SELECT,
+				'options'     => array(
+					'default'            => esc_html__( 'Default', 'omniverse' ),
+					'mask'               => esc_html__( 'Color mask', 'omniverse' ),
+					'shadow'             => esc_html__( 'Mask with shadow', 'omniverse' ),
+					'border'             => esc_html__( 'Bordered', 'omniverse' ),
+					'background'         => esc_html__( 'Bordered background', 'omniverse' ),
+					'content-background' => esc_html__( 'Content background', 'omniverse' ),
+				),
+				'default'     => 'default',
+			)
+		);
+
+		$this->add_control(
+			'hover',
+			array(
+				'label'       => esc_html__( 'Hover effect', 'omniverse' ),
+				'description' => esc_html__( 'Set beautiful hover effects for your banner.', 'omniverse' ),
+				'type'        => Controls_Manager::SELECT,
+				'options'     => array(
+					'zoom'         => esc_html__( 'Zoom image', 'omniverse' ),
+					'parallax'     => esc_html__( 'Parallax', 'omniverse' ),
+					'background'   => esc_html__( 'Background', 'omniverse' ),
+					'border'       => esc_html__( 'Bordered', 'omniverse' ),
+					'zoom-reverse' => esc_html__( 'Zoom reverse', 'omniverse' ),
+					'none'         => esc_html__( 'Disable', 'omniverse' ),
+				),
+				'default'     => 'none',
+			)
+		);
+
+		$this->add_control(
+			'rounding_size',
+			array(
+				'label'     => esc_html__( 'Rounding', 'omniverse' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => array(
+					''       => esc_html__( 'Inherit', 'omniverse' ),
+					'0'      => esc_html__( '0', 'omniverse' ),
+					'5'      => esc_html__( '5', 'omniverse' ),
+					'8'      => esc_html__( '8', 'omniverse' ),
+					'12'     => esc_html__( '12', 'omniverse' ),
+					'custom' => esc_html__( 'Custom', 'omniverse' ),
+				),
+				'default'   => '',
+				'selectors' => array(
+					'{{WRAPPER}}' => '--wd-brd-radius: {{VALUE}}px;',
+				),
+			)
+		);
+
+		$this->add_control(
+			'custom_rounding_size',
+			array(
+				'label'      => esc_html__( 'Custom rounding', 'omniverse' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( '%', 'px' ),
+				'range'      => array(
+					'px' => array(
+						'min'  => 1,
+						'max'  => 300,
+						'step' => 1,
+					),
+					'%'  => array(
+						'min'  => 1,
+						'max'  => 100,
+						'step' => 1,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}}' => '--wd-brd-radius: {{SIZE}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'rounding_size' => array( 'custom' ),
+				),
+			)
+		);
+
+		$this->add_control(
+			'omniverse_color_scheme',
+			array(
+				'label'   => esc_html__( 'Color Scheme', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					''      => esc_html__( 'Inherit', 'omniverse' ),
+					'light' => esc_html__( 'Light', 'omniverse' ),
+					'dark'  => esc_html__( 'Dark', 'omniverse' ),
+				),
+				'default' => '',
+			)
+		);
+
+		$this->add_control(
+			'title_size',
+			array(
+				'label'   => esc_html__( 'Predefined size', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'default'     => esc_html__( 'Default (22px)', 'omniverse' ),
+					'small'       => esc_html__( 'Small (16px)', 'omniverse' ),
+					'large'       => esc_html__( 'Large (26px)', 'omniverse' ),
+					'extra-large' => esc_html__( 'Extra Large (36px)', 'omniverse' ),
+				),
+				'default' => 'default',
+			)
+		);
+
+		$this->add_control(
+			'custom_content_bg_color',
+			array(
+				'label'     => esc_html__( 'Content background color', 'omniverse' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .wrapper-content-banner' => 'background-color: {{VALUE}}',
+				),
+				'condition' => array(
+					'style' => 'content-background',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Title settings.
+		 */
+		$this->start_controls_section(
+			'title_style_section',
+			array(
+				'label' => esc_html__( 'Title', 'omniverse' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'title_tag',
+			array(
+				'label'   => esc_html__( 'Tag', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'h1'   => esc_html__( 'h1', 'omniverse' ),
+					'h2'   => esc_html__( 'h2', 'omniverse' ),
+					'h3'   => esc_html__( 'h3', 'omniverse' ),
+					'h4'   => esc_html__( 'h4', 'omniverse' ),
+					'h5'   => esc_html__( 'h5', 'omniverse' ),
+					'h6'   => esc_html__( 'h6', 'omniverse' ),
+					'p'    => esc_html__( 'p', 'omniverse' ),
+					'div'  => esc_html__( 'div', 'omniverse' ),
+					'span' => esc_html__( 'span', 'omniverse' ),
+				),
+				'default' => 'h4',
+			)
+		);
+
+		$this->add_control(
+			'title_decoration_style',
+			array(
+				'label'       => esc_html__( 'Highlight text style', 'omniverse' ),
+				'description' => esc_html__( 'The text must be wrapped with the <u></u> tag to highlight it.', 'omniverse' ),
+				'type'        => Controls_Manager::SELECT,
+				'options'     => array(
+					'default'     => esc_html__( 'Default', 'omniverse' ),
+					'colored'     => esc_html__( 'Primary color', 'omniverse' ),
+					'colored-alt' => esc_html__( 'Primary color + secondary font', 'omniverse' ),
+					'bordered'    => esc_html__( 'Bordered', 'omniverse' ),
+				),
+				'default'     => 'default',
+			)
+		);
+
+		$this->add_control(
+			'custom_title_color',
+			array(
+				'label'     => esc_html__( 'Color', 'omniverse' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .banner-title' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'title_typography',
+				'label'    => esc_html__( 'Custom typography', 'omniverse' ),
+				'selector' => '{{WRAPPER}} .banner-title',
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Subtitle settings.
+		 */
+		$this->start_controls_section(
+			'subtitle_style_section',
+			array(
+				'label' => esc_html__( 'Subtitle', 'omniverse' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'subtitle_style',
+			array(
+				'label'   => esc_html__( 'Subtitle style', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'default'    => esc_html__( 'Default', 'omniverse' ),
+					'background' => esc_html__( 'Background', 'omniverse' ),
+				),
+				'default' => 'default',
+			)
+		);
+
+		$this->add_control(
+			'subtitle_color',
+			array(
+				'label'   => esc_html__( 'Predefined color', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'default' => esc_html__( 'Default', 'omniverse' ),
+					'primary' => esc_html__( 'Primary', 'omniverse' ),
+					'alt'     => esc_html__( 'Alternative', 'omniverse' ),
+				),
+				'default' => 'default',
+			)
+		);
+
+		$this->add_control(
+			'custom_subtitle_color',
+			array(
+				'label'     => esc_html__( 'Color', 'omniverse' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .banner-subtitle' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'custom_subtitle_bg_color',
+			array(
+				'label'     => esc_html__( 'Background color', 'omniverse' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .banner-subtitle' => 'background-color: {{VALUE}}',
+				),
+				'condition' => array(
+					'subtitle_style' => array( 'background' ),
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'subtitle_typography',
+				'label'    => esc_html__( 'Custom typography', 'omniverse' ),
+				'selector' => '{{WRAPPER}} .banner-subtitle',
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Content settings.
+		 */
+		$this->start_controls_section(
+			'content_style_section',
+			array(
+				'label' => esc_html__( 'Content', 'omniverse' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'content_text_size',
+			array(
+				'label'   => esc_html__( 'Predefined size', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'default' => esc_html__( 'Default (14px)', 'omniverse' ),
+					'medium'  => esc_html__( 'Medium (16px)', 'omniverse' ),
+					'large'   => esc_html__( 'Large (18px)', 'omniverse' ),
+				),
+				'default' => 'default',
+			)
+		);
+
+		$this->add_control(
+			'custom_text_color',
+			array(
+				'label'     => esc_html__( 'Color', 'omniverse' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .banner-inner' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'text_typography',
+				'label'    => esc_html__( 'Custom typography', 'omniverse' ),
+				'selector' => '{{WRAPPER}} .banner-inner',
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Countdown settings.
+		 */
+		$this->start_controls_section(
+			'countdown_style_section',
+			array(
+				'label' => esc_html__( 'Countdown', 'omniverse' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'countdown_style',
+			[
+				'label'   => esc_html__( 'Style', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => [
+					'standard'    => esc_html__( 'Standard', 'omniverse' ),
+					'transparent' => esc_html__( 'Transparent', 'omniverse' ),
+					'active'      => esc_html__( 'Primary color', 'omniverse' ),
+					'simple'      => esc_html__( 'Simple', 'omniverse' ),
+				],
+				'default' => 'standard',
+			]
+		);
+
+		$this->add_control(
+			'countdown_color_scheme',
+			[
+				'label'   => esc_html__( 'Color Scheme', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => [
+					''      => esc_html__( 'Inherit', 'omniverse' ),
+					'light' => esc_html__( 'Light', 'omniverse' ),
+					'dark'  => esc_html__( 'Dark', 'omniverse' ),
+				],
+				'default' => '',
+			]
+		);
+
+		$this->add_control(
+			'countdown_size',
+			[
+				'label'   => esc_html__( 'Predefined size', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => [
+					'small'  => esc_html__( 'Small (20px)', 'omniverse' ),
+					'medium' => esc_html__( 'Medium (24px)', 'omniverse' ),
+					'large'  => esc_html__( 'Large (28px)', 'omniverse' ),
+					'xlarge' => esc_html__( 'Extra Large (42px)', 'omniverse' ),
+				],
+				'default' => 'medium',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Button settings.
+		 */
+		$this->start_controls_section(
+			'button_style_section',
+			array(
+				'label' => esc_html__( 'Button', 'omniverse' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'btn_position',
+			array(
+				'label'     => esc_html__( 'Button position', 'omniverse' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => array(
+					'hover'  => esc_html__( 'Show on hover', 'omniverse' ),
+					'static' => esc_html__( 'Static', 'omniverse' ),
+				),
+				'default'   => 'hover',
+				'condition' => array(
+					'style!' => 'content-background',
+				),
+			)
+		);
+
+		$this->add_control(
+			'btn_size',
+			array(
+				'label'   => esc_html__( 'Predefined size', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'default'     => esc_html__( 'Default', 'omniverse' ),
+					'extra-small' => esc_html__( 'Extra Small', 'omniverse' ),
+					'small'       => esc_html__( 'Small', 'omniverse' ),
+					'large'       => esc_html__( 'Large', 'omniverse' ),
+					'extra-large' => esc_html__( 'Extra Large', 'omniverse' ),
+				),
+				'default' => 'default',
+			)
+		);
+
+		$this->add_control(
+			'btn_color',
+			array(
+				'label'   => esc_html__( 'Predefined color', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'default' => esc_html__( 'Default', 'omniverse' ),
+					'primary' => esc_html__( 'Primary', 'omniverse' ),
+					'alt'     => esc_html__( 'Alternative', 'omniverse' ),
+					'black'   => esc_html__( 'Black', 'omniverse' ),
+					'white'   => esc_html__( 'White', 'omniverse' ),
+				),
+				'default' => 'default',
+			)
+		);
+
+		$this->add_control(
+			'btn_style',
+			array(
+				'label'   => esc_html__( 'Style', 'omniverse' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'default'  => esc_html__( 'Flat', 'omniverse' ),
+					'bordered' => esc_html__( 'Bordered', 'omniverse' ),
+					'link'     => esc_html__( 'Link button', 'omniverse' ),
+					'3d'       => esc_html__( '3D', 'omniverse' ),
+				),
+				'default' => 'default',
+			)
+		);
+
+		$this->add_control(
+			'btn_shape',
+			array(
+				'label'     => esc_html__( 'Shape', 'omniverse' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => array(
+					'rectangle'  => esc_html__( 'Rectangle', 'omniverse' ),
+					'round'      => esc_html__( 'Circle', 'omniverse' ),
+					'semi-round' => esc_html__( 'Round', 'omniverse' ),
+				),
+				'condition' => array(
+					'btn_style!' => array( 'link' ),
+				),
+				'default'   => 'rectangle',
+			)
+		);
+
+		$this->add_control(
+			'button_icon_heading',
+			array(
+				'label'     => esc_html__( 'Icon', 'omniverse' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		omniverse_get_button_style_icon_map( $this, 'btn_' );
+
+		$this->add_control(
+			'button_layout_heading',
+			array(
+				'label'     => esc_html__( 'Layout', 'omniverse' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_control(
+			'full_width',
+			array(
+				'label'        => esc_html__( 'Full width', 'omniverse' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'omniverse' ),
+				'label_off'    => esc_html__( 'No', 'omniverse' ),
+				'return_value' => 'yes',
+			)
+		);
+
+		$this->add_control(
+			'button_hr',
+			array(
+				'type'  => Controls_Manager::DIVIDER,
+				'style' => 'thick',
+			)
+		);
+
+		$this->add_control(
+			'hide_btn_tablet',
+			array(
+				'label'        => esc_html__( 'Hide button on tablet', 'omniverse' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'omniverse' ),
+				'label_off'    => esc_html__( 'No', 'omniverse' ),
+				'return_value' => 'yes',
+			)
+		);
+
+		$this->add_control(
+			'hide_btn_mobile',
+			array(
+				'label'        => esc_html__( 'Hide button on mobile', 'omniverse' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'omniverse' ),
+				'label_off'    => esc_html__( 'No', 'omniverse' ),
+				'return_value' => 'yes',
+			)
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Layout settings.
+		 */
+		$this->start_controls_section(
+			'layout_style_section',
+			array(
+				'label' => esc_html__( 'Layout', 'omniverse' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_control(
+			'horizontal_alignment',
+			array(
+				'label'   => esc_html__( 'Content horizontal alignment', 'omniverse' ),
+				'type'    => 'wd_buttons',
+				'options' => array(
+					'left'   => array(
+						'title' => esc_html__( 'Left', 'omniverse' ),
+						'image' => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/horizontal/left.png',
+					),
+					'center' => array(
+						'title' => esc_html__( 'Center', 'omniverse' ),
+						'image' => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/horizontal/center.png',
+					),
+					'right'  => array(
+						'title' => esc_html__( 'Right', 'omniverse' ),
+						'image' => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/horizontal/right.png',
+					),
+
+				),
+				'default' => 'left',
+			)
+		);
+
+		$this->add_control(
+			'vertical_alignment',
+			array(
+				'label'   => esc_html__( 'Content vertical alignment', 'omniverse' ),
+				'type'    => 'wd_buttons',
+				'options' => array(
+					'top'    => array(
+						'title' => esc_html__( 'Top', 'omniverse' ),
+						'image' => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/vertical/top.png',
+					),
+					'middle' => array(
+						'title' => esc_html__( 'Middle', 'omniverse' ),
+						'image' => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/vertical/middle.png',
+					),
+					'bottom' => array(
+						'title' => esc_html__( 'Bottom', 'omniverse' ),
+						'image' => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/vertical/bottom.png',
+					),
+				),
+				'default' => 'top',
+			)
+		);
+
+		$this->add_control(
+			'text_alignment',
+			array(
+				'label'   => esc_html__( 'Text alignment', 'omniverse' ),
+				'type'    => 'wd_buttons',
+				'options' => array(
+					'left'   => array(
+						'title' => esc_html__( 'Left', 'omniverse' ),
+						'image' => OMNIVERSE_ASSETS_IMAGES . '/settings/align/left.jpg',
+					),
+					'center' => array(
+						'title' => esc_html__( 'Center', 'omniverse' ),
+						'image' => OMNIVERSE_ASSETS_IMAGES . '/settings/align/center.jpg',
+					),
+					'right'  => array(
+						'title' => esc_html__( 'Right', 'omniverse' ),
+						'image' => OMNIVERSE_ASSETS_IMAGES . '/settings/align/right.jpg',
+					),
+				),
+				'default' => 'left',
+			)
+		);
+
+		$this->add_responsive_control(
+			'width',
+			array(
+				'label'          => esc_html__( 'Width', 'omniverse' ),
+				'type'           => Controls_Manager::SLIDER,
+				'default'        => array(
+					'unit' => '%',
+				),
+				'tablet_default' => array(
+					'unit' => '%',
+				),
+				'mobile_default' => array(
+					'unit' => '%',
+				),
+				'size_units'     => array( '%', 'px' ),
+				'range'          => array(
+					'%'  => array(
+						'min' => 1,
+						'max' => 100,
+					),
+					'px' => array(
+						'min' => 1,
+						'max' => 1000,
+					),
+				),
+				'selectors'      => array(
+					'{{WRAPPER}} .promo-banner:not(.banner-content-background) .content-banner, {{WRAPPER}} .promo-banner.banner-content-background .wrapper-content-banner' => 'max-width: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'content_height',
+			array(
+				'label'          => esc_html__( 'Height', 'omniverse' ),
+				'type'           => Controls_Manager::SLIDER,
+				'default'        => array(
+					'unit' => '%',
+				),
+				'tablet_default' => array(
+					'unit' => '%',
+				),
+				'mobile_default' => array(
+					'unit' => '%',
+				),
+				'size_units'     => array( '%', 'px' ),
+				'range'          => array(
+					'%'  => array(
+						'min' => 1,
+						'max' => 100,
+					),
+					'px' => array(
+						'min' => 1,
+						'max' => 1000,
+					),
+				),
+				'selectors'      => array(
+					'{{WRAPPER}} .promo-banner:not(.banner-content-background) .content-banner, {{WRAPPER}} .promo-banner.banner-content-background .wrapper-content-banner' => 'min-height: {{SIZE}}{{UNIT}};',
+				),
+				'condition'      => array(
+					'style' => 'content-background',
+				),
+			)
+		);
+
+		$this->add_control(
+			'increase_spaces',
+			array(
+				'label'        => esc_html__( 'Increase spaces', 'omniverse' ),
+				'description'  => esc_html__( 'Suggest to use this option if you have large banners. Padding will be set in percentage to your screen width.', 'omniverse' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'default'      => 'no',
+				'label_on'     => esc_html__( 'Yes', 'omniverse' ),
+				'label_off'    => esc_html__( 'No', 'omniverse' ),
+				'return_value' => 'yes',
+			)
+		);
+
+		$this->end_controls_section();
+	}
+
+	/**
+	 * Render the widget output on the frontend.
+	 *
+	 * Written in PHP and used to generate the final HTML.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @access protected
+	 */
+	protected function render() {
+		omniverse_elementor_banner_template( $this->get_settings_for_display(), $this );
+	}
+}
+
+Plugin::instance()->widgets_manager->register( new Banner() );

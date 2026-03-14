@@ -1,0 +1,382 @@
+// ------------------------------------------------------------------------------------------------
+// DEVICES SWITHCER
+// ------------------------------------------------------------------------------------------------
+
+@if $general {
+
+	// ------------------------------------------------------------------------------------------------
+	// OPTION TABS
+	// ------------------------------------------------------------------------------------------------
+
+	// ------------------------------------------
+	// STYLE DEVICES
+	// ------------------------------------------
+
+	.dn-tabs {
+
+		&.wd-style-devices {
+			position: relative;
+
+			.dn-tabs-header {
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				z-index: $z-layer-1;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				pointer-events: none;
+
+				h3 {
+					flex-grow: 1;
+					visibility: hidden;
+					margin-inline-end: 15px;
+					margin-bottom: 0;
+					opacity: 0;
+
+					@extend %option-title-label;
+				}
+			}
+
+			.dn-nav-tabs {
+				margin-right: -10px;
+				margin-left: -10px;
+				pointer-events: auto;
+
+				li {
+
+					a {
+						padding: 0 7px 0 7px;
+
+						span {
+							display: none;
+						}
+
+						&:before {
+							color: #BFBFBF;
+							margin: 0;
+						}
+					}
+
+					&.wd-active {
+
+						a {
+							color: var(--dn-primary-color);
+
+							&:before {
+								color: inherit;
+							}
+						}
+					}
+
+					&:not(.wd-active) {
+
+						&:hover {
+
+							a {
+								opacity: .6;
+							}
+						}
+					}
+				}
+			}
+
+			.dn-group {
+				border-radius: 0;
+
+				--dn-group-sp: 0;
+				--dn-group-bg-color: transparent;
+				--dn-option-border-color: inherit;
+			}
+		}
+	}
+
+	// ------------------------------------------------------------------------------------------------
+	// CONTROL TABS
+	// ------------------------------------------------------------------------------------------------
+
+	.dn-control-tabs-nav {
+		position: absolute;
+		top: 0;
+		inset-inline-end: 0;
+	}
+
+	.dn-control-tab-nav-item {
+		@extend %dn-devices-tabs;
+		text-transform: capitalize;
+		font-size: 14px !important;
+
+		// span {
+		// 	margin-inline-start: 8px !important;
+		// }
+
+		&:not(:last-child) {
+			margin-inline-end: 9px !important;
+		}
+
+		&:before {
+			font-size: 18px !important;
+		}
+	}
+
+	.dn-control-tab-content {
+		animation: wd-fadeIn .6s ease both;
+
+		&:not(.dn-active) {
+			display: none;
+		}
+	}
+
+	// :is(
+	// .dn-col-6,
+	// .dn-col-4) {
+
+	// 	.dn-device {
+
+	// 		span {
+	// 			display: none;
+	// 		}
+	// 	}
+	// }
+
+	// ------------------------------------------------------------------------------------------------
+	// WPB BUTTON SWITHCER WITH TABS DEVICES STYLE
+	// ------------------------------------------------------------------------------------------------
+
+	//**** CUSTOM CONTENT WIDTH OPTIONS SET ****//
+
+	.vc_column.wd-custom-width {
+
+		.wd-select-buttons {
+			position: absolute;
+			top: 1px;
+			// background-color: #FFF;
+			inset-inline-end: 15px;
+			z-index: $z-layer-6;
+			padding: 0;
+			border: none;
+			border-radius: 0;
+			background-color: transparent;
+
+			--dn-input-height: auto;
+
+			// .omniverse-td-content & {
+			// 	background-color: #F7F7F7;
+			// }
+		}
+
+		.vc-button-set-item {
+			padding: 0;
+			background-color: transparent !important;
+
+			@extend %dn-devices-tabs;
+			@extend %dn-devices-tabs-with-tablet-vertical;
+
+			span {
+				line-height: 1;
+			}
+
+			&.dn-active {
+				color: var(--dn-secondary-color) !important;
+			}
+		}
+
+		.vc_column {
+			animation: wd-fadeInTooltip .5s ease;
+		}
+	}
+
+	.omniverse-td-content {
+
+		.wd-custom-width {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	.vc_edit-form-tab {
+
+		> .wd-custom-width {
+			margin-bottom: 0 !important;
+
+			~ .wpb_el_type_omniverse_slider {
+				margin-top: -15px;
+				padding-top: 0 !important;
+			}
+		}
+	}
+
+	// .wd-res-control {
+
+	// 	~ .wd-res-item {
+	// 		margin-top: 15px !important;
+	// 	}
+	// }
+
+	// ------------------------------------------------------------------------------------------------
+	// WPB RANGE SLIDER DEVICES SWITHCER
+	// ------------------------------------------------------------------------------------------------
+
+	.wd-field-devices {
+		position: absolute;
+		top: 0;
+		inset-inline-end: 15px;
+		z-index: $z-layer-6;
+		display: flex;
+		align-items: center;
+		// background-color: #FFF;
+		line-height: 1;
+		text-transform: capitalize;
+		// position: absolute;
+		// top: -45px;
+		// right: 0 !important;
+		// // margin-bottom: 15px;
+
+		> span {
+			@extend %dn-devices-tabs;
+			@extend %dn-devices-tabs-with-tablet-vertical;
+		}
+
+		// .omniverse-td-content & {
+		// 	background-color: #F7F7F7;
+		// }
+
+		// :is(
+		// .vc_col-xs-6,
+		// .vc_col-sm-6) & {
+
+		// 	.wd-device {
+
+		// 		span {
+		// 			display: none;
+		// 		}
+		// 	}
+		// }
+	}
+
+} // END IF
+
+// ------------------------------------------------------------------------------------------------
+// RESPONSIVE
+// ------------------------------------------------------------------------------------------------
+
+// ------------------------------------------
+// MEDIA 1200 AND UP
+// ------------------------------------------
+
+// @mixin R-XL-UP__elements__option-tabs {
+
+// 	// ------------------------------------------
+// 	// STYLE DEVICES
+// 	// ------------------------------------------
+
+// 	.dn-tabs {
+
+// 		&.dn-style-devices {
+
+// 			// #addtag &,
+// 			// #edittag & {
+
+// 			// 	.dn-btns-set {
+// 			// 		position: absolute;
+// 			// 		top: 0;
+// 			// 		right: 15px;
+// 			// 		z-index: 5;
+// 			// 		justify-content: flex-end;
+// 			// 	}
+// 			// }
+
+// 			// .dn-metaboxes &,
+// 			// .dn-theme-style & {
+
+// 			// 	.dn-btns-set {
+// 			// 		margin-left: 30%;
+// 			// 	}
+// 			// }
+// 		}
+// 	}
+// }
+
+// ------------------------------------------------------------------------------------------------
+// EXTENDS
+// ------------------------------------------------------------------------------------------------
+
+// @extend %dn-devices-tabs;
+
+%dn-devices-tabs {
+	display: inline-flex;
+	align-items: center;
+	color: #333;
+	vertical-align: middle;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 1;
+	cursor: pointer;
+	transition: all .25s ease-in-out;
+
+	span {
+		// margin-inline-start: 5px;
+		display: none;
+	}
+
+	&:hover {
+		color: #333;
+
+		&:not(.dn-active) {
+			opacity: .6;
+		}
+	}
+
+	&.dn-active {
+		color: var(--dn-secondary-color);
+
+		&:before {
+			color: inherit;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-inline-end: 7px;
+	}
+
+	&:before {
+		color: #BFBFBF;
+		font-weight: 400;
+		font-size: 15px;
+
+		@include font-icon-base;
+	}
+
+	&[data-value="desktop"] {
+
+		&:before {
+			@include font-icon-content($dn-icon-desktop);
+		}
+	}
+
+	&[data-value*="tablet"] {
+
+		&:before {
+			@include font-icon-content($dn-icon-tablet);
+		}
+	}
+
+	&[data-value="mobile"] {
+
+		&:before {
+			@include font-icon-content($dn-icon-phone);
+		}
+	}
+}
+
+// @extend %dn-devices-tabs-with-tablet-vertical;
+
+%dn-devices-tabs-with-tablet-vertical {
+
+	&[data-value="tablet"] {
+
+		&:before {
+			transform: rotate(270deg);
+		}
+	}
+}

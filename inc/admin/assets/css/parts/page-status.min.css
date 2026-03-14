@@ -1,0 +1,1 @@
+.dn-status h4{font-size:18px}.dn-status-error{color:var(--dn-warning-color)}.dn-status-error span:first-child{font-weight:600}.dn-status-error:before{content:"\e903";font-weight:400;font-family:"dn-icon-font";-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-inline-end:1px}

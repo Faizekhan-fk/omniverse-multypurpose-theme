@@ -1,0 +1,41 @@
+// ------------------------------------------------------------------------------------------------
+// FOOTER
+// ------------------------------------------------------------------------------------------------
+
+@if $general {
+
+	.dn-footer {
+		margin-top: 40px;
+		max-width: var(--dn-content-width);
+		// max-width: var(--dn-content-width);
+		border-bottom: 1px solid var(--dn-option-border-color);
+
+		.dn-row {
+			align-items: center;
+			// justify-content: space-between;
+		}
+
+		.dn-logo {
+			min-width: 120px;
+			max-width: 120px;
+			opacity: .5;
+			filter: grayscale(100%);
+
+			&:hover {
+				opacity: .3;
+			}
+		}
+
+		.dn-nav {
+
+			> li {
+
+				> a {
+					color: rgba(16, 16, 16, .5);
+					font-size: 12px;
+				}
+			}
+		}
+	}
+
+} // END IF

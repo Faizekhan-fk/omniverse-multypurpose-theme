@@ -1,0 +1,131 @@
+// ------------------------------------------------------------------------------------------------
+// WELCOME
+// ------------------------------------------------------------------------------------------------
+
+@if $page-welcome {
+
+	.dn-welcome-page {
+		max-width: var(--dn-content-width);
+	}
+
+	.dn-welcome-box {
+		overflow: hidden;
+		// margin-bottom: 20px;
+		background-color: #2C3E50;
+
+		img {
+			position: absolute;
+			top: 0;
+			inset-inline-end: 0;
+			bottom: 0;
+			z-index: -1;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		// h3,
+		// p {
+		// 	max-width: 60%;
+		// }
+
+		h3 {
+			font-size: 28px;
+		}
+
+		p {
+			font-size: 120%;
+		}
+
+		.dn-box-content {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+			justify-content: center;
+			min-height: 215px;
+		}
+	}
+
+	:is(
+	.dn-welcome-box,
+	.dn-white-label-box) {
+
+		h3 {
+			font-size: 28px;
+		}
+
+		p {
+			font-size: 120%;
+		}
+	}
+
+	.dn-white-label-box {
+
+		.dn-about-text {
+			font-size: 120%;
+			line-height: 1.5;
+		}
+	}
+
+	.dn-info-boxes {
+
+		h4 {
+			margin-bottom: 5px;
+			color: var(--dn-primary-color);
+			font-size: 18px;
+		}
+
+		p {
+			font-size: 120%;
+		}
+	}
+
+	.dn-info-box-img {
+
+		img {
+			max-width: 128px;
+		}
+	}
+
+} // END IF
+
+// ------------------------------------------------------------------------------------------------
+// RESPONSIVE
+// ------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------------------------
+// 1025 AND DOWN
+// ------------------------------------------------------------------------------------------------
+
+@mixin R-MD-UP__pages__zynxsol__welcome {
+
+	@if $page-welcome {
+
+		.dn-welcome-box {
+
+			:is(
+			h3,
+			p) {
+				max-width: 60%;
+			}
+		}
+
+	} // END IF
+}
+
+// ------------------------------------------------------------------------------------------------
+// 1024 AND DOWN
+// ------------------------------------------------------------------------------------------------
+
+@mixin R-MD-DOWN__pages__zynxsol__welcome {
+
+	@if $page-welcome {
+
+		.dn-welcome-box {
+
+			.dn-box-content {
+				background-color: rgba(#000,.4);
+			}
+		}
+
+	} // END IF
+}

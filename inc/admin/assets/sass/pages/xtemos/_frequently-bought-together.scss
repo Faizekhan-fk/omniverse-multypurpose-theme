@@ -1,0 +1,109 @@
+// ------------------------------------------------------------------------------------------------
+// FREQUENTLY BOUGHT TOGETHER
+// ------------------------------------------------------------------------------------------------
+
+@if $page-fbt {
+
+	// .dn-bundle {
+	// 	display: flex;
+	// 	margin-bottom: 10px;
+
+	// 	label {
+	// 		font-weight: 600;
+	// 	}
+
+	// 	> div {
+
+	// 		&:not(:last-child) {
+	// 			margin-inline-end: 15px;
+	// 		}
+	// 	}
+	// }
+
+	.dn-bundle-name {
+		width: 340px;
+	}
+
+	// .dn-bought-together-btn {
+	// 	margin-top: 15px;
+
+	// 	margin-inline-start: 6px;
+	// }
+
+	// ------------------------------------------------------------------------------------------------
+	// SINGLE PRODUCT OPTIONS
+	// ------------------------------------------------------------------------------------------------
+
+	.dn-bought-together {
+		position: relative;
+
+		:is(
+		tbody,
+		.dn-bought-together-controls) {
+			z-index: 999999;
+			transition: all .3s ease;
+		}
+
+		&:before {
+			position: absolute;
+			top: calc(50% - 15px);
+			left: calc(50% - 15px);
+			z-index: 999999;
+			visibility: hidden;
+			opacity: 0;
+
+			@include loader(30px);
+		}
+
+		&.dn-loading {
+
+			:is(
+			tbody,
+			.dn-bought-together-controls) {
+				opacity: .5;
+				pointer-events: none;
+			}
+
+			&:before {
+				visibility: visible;
+				opacity: 1;
+				transition: all .3s ease;
+
+				@include act-loader;
+			}
+		}
+	}
+
+	.dn-bought-together-controls {
+
+		a {
+			display: inline-block;
+			margin-top: 10px;
+			margin-inline-start: 10px;
+		}
+
+		.select2-container--dn {
+			// --dn-input-width: 450px;
+
+			.select2-selection__arrow {
+
+				&:before {
+					top: 5px !important;
+				}
+			}
+		}
+
+		.form-field {
+
+			.select2-container--dn {
+				max-width: 450px !important;
+			}
+		}
+
+		.button {
+			margin-top: 15px;
+			margin-inline-start: 10px;
+		}
+	}
+
+} // END IF

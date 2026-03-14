@@ -1,0 +1,239 @@
+// ------------------------------------------------------------------------------------------------
+// THEME CONFIGS
+// ------------------------------------------------------------------------------------------------
+
+@import "config/generator";
+
+@import "config/configs";
+
+// ------------------------------------------------------------------------------------------------
+// BASE STYLE
+// ------------------------------------------------------------------------------------------------
+
+@import "base/icon-font";
+
+@import "base/base";
+
+@import "base/animations";
+
+@import "base/helpers";
+
+@import "base/adminbar";
+
+// ------------------------------------------------------------------------------------------------
+// EXTENDS
+// ------------------------------------------------------------------------------------------------
+
+@import "extend/all";
+
+// ------------------------------------------------------------------------------------------------
+// LAYOUT
+// ------------------------------------------------------------------------------------------------
+
+@import "layout/header";
+
+@import "layout/content";
+
+@import "layout/footer";
+
+// ------------------------------------------------------------------------------------------------
+// OPTIONS
+// ------------------------------------------------------------------------------------------------
+
+// @import "options/base";
+
+// @import "options/metaboxes";
+
+// @import "options/typography";
+
+// @import "options/social-icons";
+
+// ------------------------------------------------------------------------------------------------
+// PAGES
+// ------------------------------------------------------------------------------------------------
+
+// ------------------------------------------
+// PAGES XTEMOS
+// ------------------------------------------
+
+@import "pages/zynxsol/header-builder/general";
+
+@import "pages/zynxsol/header-builder/header-list";
+
+@import "pages/zynxsol/header-builder/header-editor";
+
+// @import "pages/zynxsol/slide";
+
+@import "pages/zynxsol/edit-slide";
+
+@import "pages/zynxsol/slider";
+
+@import "pages/zynxsol/css-generator";
+
+@import "pages/zynxsol/setup-wizard";
+
+@import "pages/zynxsol/dummy-content";
+
+@import "pages/zynxsol/plugins";
+
+@import "pages/zynxsol/patcher";
+
+@import "pages/zynxsol/theme-license";
+
+@import "pages/zynxsol/theme-settings";
+
+@import "pages/zynxsol/welcome";
+
+@import "pages/zynxsol/presets";
+
+@import "pages/zynxsol/layouts";
+
+@import "pages/zynxsol/size-guides";
+
+@import "pages/zynxsol/frequently-bought-together";
+
+@import "pages/zynxsol/dynamic-discounts";
+
+@import "pages/zynxsol/checkout-fields-manager";
+
+@import "pages/zynxsol/status";
+
+@import "pages/zynxsol/backups";
+
+@import "pages/zynxsol/wishlists";
+
+// ------------------------------------------
+// PAGES WORDPRESS
+// ------------------------------------------
+
+@import "pages/wordpress/post-type";
+
+@import "pages/wordpress/post-type-list";
+
+@import "pages/wordpress/widgets";
+
+@import "pages/wordpress/gutenberg";
+
+@import "pages/wordpress/menus";
+
+// ------------------------------------------------------------------------------------------------
+// ELEMENTS
+// ------------------------------------------------------------------------------------------------
+
+@import "controls/background-control";
+
+@import "controls/button-switcher";
+
+@import "controls/buttons-set";
+
+@import "controls/code-editor";
+
+@import "controls/color-picker";
+
+@import "controls/group-options";
+
+@import "controls/images-set";
+
+@import "controls/range-slider";
+
+@import "controls/text-editor";
+
+@import "controls/upload";
+
+@import "controls/dimensions-control";
+
+@import "controls/typography";
+
+@import "controls/hotspot";
+
+@import "controls/shadow";
+
+@import "controls/gradient";
+
+@import "controls/responsive-input";
+
+@import "controls/dimension";
+
+@import "controls/table-controls";
+
+// ------------------------------------------------------------------------------------------------
+// MODULES
+// ------------------------------------------------------------------------------------------------
+
+@import "modules/forms";
+
+@import "modules/logo";
+
+@import "modules/navigation";
+
+@import "modules/dropdown";
+
+@import "modules/buttons";
+
+@import "modules/loader";
+
+@import "modules/menus";
+
+@import "modules/popup";
+
+@import "modules/hint";
+
+@import "modules/tooltip";
+
+@import "modules/notices";
+
+@import "modules/section";
+
+@import "modules/field";
+
+@import "modules/group";
+
+@import "modules/search";
+
+@import "modules/tabs-option";
+
+@import "modules/tabs-devices";
+
+@import "modules/filters";
+
+@import "modules/note";
+
+@import "modules/table";
+
+@import "modules/pagination";
+
+@import "modules/sticky-save";
+
+// ------------------------------------------------------------------------------------------------
+// INTEGRATIONS
+// ------------------------------------------------------------------------------------------------
+
+@import "integrations/wpbakery/wpbakery";
+
+@import "integrations/wpbakery/pages/general-tab";
+
+@import "integrations/wpbakery/pages/design-options-tab";
+
+@import "integrations/wpbakery/pages/responsive-options";
+
+@import "integrations/wpbakery/pages/tamplates-library";
+
+@import "integrations/woocommerce/pages/product";
+
+@import "integrations/woocommerce/pages/attributes";
+
+@import "integrations/woocommerce/pages/categories";
+
+// ------------------------------------------------------------------------------------------------
+// PLUGINS
+// ------------------------------------------------------------------------------------------------
+
+@import "libraries/select2";
+
+// ------------------------------------------------------------------------------------------------
+// RESPONSIVE
+// ------------------------------------------------------------------------------------------------
+
+@import "responsive/responsive-up";
+
+@import "responsive/responsive-down";

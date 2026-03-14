@@ -1,0 +1,142 @@
+// ------------------------------------------------------------------------------------------------
+// DN GROUP OPTIONS
+// ------------------------------------------------------------------------------------------------
+
+@if $cont-group-options {
+
+	// ------------------------------------------
+	// GENERAL
+	// ------------------------------------------
+
+	.dn-group-control {
+		z-index: 1;
+
+		.dn-option-control {
+			position: relative;
+
+			.dn-option-title {
+				--dn-option-space: 8px;
+				margin-bottom: 0;
+				border: none;
+
+				label {
+					font-weight: 400;
+				}
+			}
+		}
+	}
+
+	.dn-group-control {
+
+		.dn-fields-group {
+			gap: 20px;
+
+			> .dn-field {
+				flex-basis: unset;
+				flex-grow: 0;
+				width: auto;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// ------------------------------------------
+	// DROPDOWNS
+	// ------------------------------------------
+
+	:is(
+	.dn-fields-group,
+	.dn-field) {
+
+		&:has(.dn-dropdown-options.dn-show) {
+			z-index: 999999; // NOTE FOR SELECT 2
+		}
+	}
+
+	.dn-sections {
+
+		&:has(.dn-dropdown-options.dn-show) {
+
+			.dn-options-actions {
+				position: static;
+			}
+		}
+	}
+
+	.dn-dropdown-options {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 var(--dn-sp);
+		position: absolute;
+		top: calc(var(--dn-input-height) + 10px);
+		inset-inline: 0;
+		// margin-top: 20px;
+		padding: 20px 20px 0 20px;
+		max-width: 420px;
+		border: 1px solid var(--dn-option-border-color);
+		border-radius: var(--dn-option-border-radius);
+		// box-shadow: var(--dn-option-box-shadow);
+		box-shadow: var(--dn-box-shadow);
+		background-color: #FFF;
+		// transform: translateY(10px);
+		// transition: all .2s ease;
+		--dn-color-picker-h: 30px;
+		--dn-input-width: 295px;
+		animation: wd-SlideFromBottomSmall .2s ease;
+
+		// &.dn-show {
+		// 	transform: none;
+		// }
+
+		> .dn-field {
+			margin-bottom: 20px;
+			animation-duration: .2s;
+			
+			
+			// &:last-child {
+			// 	margin-bottom: 0px;
+			// }
+		}
+
+		.dn-responsive_range-control {
+
+			.dn-option-title {
+				padding-bottom: 0;
+			}
+		}
+
+		:is(
+		.dn-select-control,
+		.dn-responsive-range) {
+			--dn-input-height: 28px;
+		}
+
+		//**** COLOR-PICKER ****//
+
+		// .wp-picker-container,
+		// .wp-picker-input-wrap {
+		// 	display: flex;
+		// }
+
+		// span.wp-picker-input-wrap {
+
+		// 	input[type=text] {
+		// 		width: 90px !important;
+		// 		font-size: 10px;
+		// 	}
+		// }
+
+		// .wp-color-picker {
+		// 	--dn-input-height: 30px;
+		// }
+	}
+
+	// @-moz-document url-prefix() {
+
+	// 	.dn-dropdown-options {
+	// 		position: relative;
+	// 		top: 0;
+	// 		margin-top: var(--dn-option-space);
+	// 	}
+	// }
+}

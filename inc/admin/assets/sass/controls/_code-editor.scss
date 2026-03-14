@@ -1,0 +1,30 @@
+// ------------------------------------------------------------------------------------
+// CODE EDITOR
+// ------------------------------------------------------------------------------------
+
+@if $cont-code-editor {
+
+	.dn-theme-style {
+
+		.CodeMirror {
+			border: 1px solid var(--dn-option-border-color-darker-10);
+			border-radius: var(--dn-option-border-radius);
+			transition: .2s border-color ease-in-out;
+
+			&:hover {
+				border-color: var(--dn-option-border-color-darker-10);
+				box-shadow: var(--dn-option-box-shadow);
+			}
+
+			&.CodeMirror-focused {
+				border-color: var(--dn-primary-color);
+				box-shadow: var(--dn-option-primary-box-shadow);
+			}
+		}
+
+		.CodeMirror-activeline-background {
+			background-color: rgba(var(--dn-primary-color--rgb),.09);
+		}
+	}
+
+} // END IF

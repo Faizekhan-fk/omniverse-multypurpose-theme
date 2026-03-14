@@ -1,0 +1,49 @@
+// ------------------------------------------------------------------------------------------------
+// POST TYPE
+// ------------------------------------------------------------------------------------------------
+
+@if $general {
+
+	// ------------------------------------------------------------------------------------
+	// DN METABOXES
+	// ------------------------------------------------------------------------------------
+
+	.dn-metaboxes {
+
+		.dn-section {
+			margin-bottom: -40px;
+		}
+
+		.dn-set-btn-img {
+			flex-basis: 80px;
+		}
+
+		.postbox & {
+			box-shadow: none;
+		}
+	}
+
+	body.block-editor-page {
+
+		.dn-metaboxes {
+
+			.dn-box-content {
+				padding: 0;
+			}
+		}
+	}
+
+	body:not(.block-editor-page) {
+
+		.postbox {
+
+			.dn-metaboxes {
+
+				.dn-box-content {
+					padding: 12px 6px 6px 6px;
+				}
+			}
+		}
+	}
+
+} // END IF

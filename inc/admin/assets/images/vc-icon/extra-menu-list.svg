@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Extra_menu_list" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E2E3E3;}
+	.st1{fill:none;stroke:#000000;stroke-width:0.4266;stroke-miterlimit:10;}
+</style>
+<g id="back">
+	<path id="Прямоугольник_3" class="st0" d="M4.3,0h23.5C30.1,0,32,1.9,32,4.3v23.5c0,2.4-1.9,4.3-4.3,4.3H4.3
+		C1.9,32,0,30.1,0,27.7V4.3C0,1.9,1.9,0,4.3,0z"/>
+</g>
+<g id="icon">
+	<g id="liner">
+		<rect id="Прямоугольник_858" x="10.2" y="6.8" width="11.5" height="4.3"/>
+		<rect id="Прямоугольник_858_копия_5" x="10.5" y="10.5" class="st1" width="11.1" height="15.6"/>
+		<rect id="Прямоугольник_858_копия_4" x="6" y="11.1" width="20.1" height="0.4"/>
+	</g>
+	<g id="up-2">
+		<rect id="Прямоугольник_858_копия" x="6" y="8.5" width="2.6" height="1.1"/>
+		<rect id="Прямоугольник_858_копия_2" x="12.6" y="8.5" class="st0" width="6.8" height="1.1"/>
+		<rect id="Прямоугольник_858_копия_3" x="23.5" y="8.5" width="2.6" height="1.1"/>
+	</g>
+	<g id="in">
+		<rect id="Прямоугольник_858_копия_6" x="12.8" y="14.3" width="6.4" height="0.9"/>
+		<rect id="Прямоугольник_858_копия_7" x="12.8" y="16.2" width="6.4" height="0.9"/>
+		<rect id="Прямоугольник_858_копия_8" x="12.8" y="18.1" width="6.4" height="0.9"/>
+		<rect id="Прямоугольник_858_копия_9" x="12.8" y="20.1" width="6.4" height="0.9"/>
+	</g>
+</g>
+</svg>

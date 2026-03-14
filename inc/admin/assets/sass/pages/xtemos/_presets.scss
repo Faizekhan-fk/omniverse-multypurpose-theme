@@ -1,0 +1,238 @@
+// ------------------------------------------------------------------------------------------------
+// OPTION PRESETS
+// ------------------------------------------------------------------------------------------------
+
+@if $page-presets {
+
+	// ------------------------------------------
+	// PRESET
+	// ------------------------------------------
+
+	.dn-preset {
+		position: relative;
+		border: 1px solid var(--dn-option-border-color);
+		border-radius: var(--dn-brd-radius);
+		transition: all .25s ease;
+
+		@include dn-bg-loader;
+
+		> div {
+			padding: 10px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+
+		&.dn-loading {
+			@include dn-act-bg-loader;
+		}
+
+		&.dn-opened {
+
+			:is(
+			.dn-preset-content,
+			.dn-preset-footer) {
+				display: block;
+			}
+		}
+
+
+
+		&.dn-opened,
+		&:hover {
+			box-shadow: var(--dn-box-shadow);
+		}
+	}
+
+	:is(
+	.dn-preset-content,
+	.dn-preset-footer) {
+		display: none;
+		animation: wd-fadeIn .4s ease both;
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: 600;
+		}
+	}
+
+	// ------------------------------------------------------------------------------------------------
+	// PRESET HEADER
+	// ------------------------------------------------------------------------------------------------
+
+	.dn-preset {
+
+		&.dn-opened {
+
+			.dn-preset-header {
+				border-bottom: 1px solid var(--dn-option-border-color);
+			}
+		}
+
+		&:not(.dn-opened) {
+
+			.dn-col {
+				pointer-events: none;
+			}
+
+			.dn-col-auto { // NOTE MAKE EDIT LINK CLICKABLE
+				pointer-events: none;
+
+				> * {
+					pointer-events: auto;
+				}
+			}
+		}
+	}
+
+	//**** LINK ****//
+
+	.dn-preset-link {
+
+		&:hover {
+
+			~ .dn-col-auto {
+
+				.dn-edit-preset {
+					background-color: var(--dn-btn-primary-color-hover);
+				}
+			}
+		}
+	}
+
+	//**** NAME ****//
+
+	.dn-preset-name {
+
+		h4 {
+			margin-bottom: 0;
+			white-space: nowrap;
+			font-size: 14px;
+			line-height: var(--dn-input-height);
+		}
+
+		[type="text"] {
+			display: none;
+		}
+	}
+
+	.dn-preset {
+
+		&.dn-opened {
+
+			.dn-preset-name {
+
+				[type="text"] {
+					display: block;
+				}
+
+				h4 {
+					display: none;
+				}
+			}
+
+			.dn-preset-link {
+				display: none;
+			}
+		}
+	}
+
+	//**** ACTIONS ****//
+
+	.dn-preset-actions {
+		display: flex;
+		justify-content: flex-end;
+
+		> * {
+
+			&:not(:last-child) {
+				margin-inline-end: 8px;
+			}
+		}
+	}
+
+	.dn-preset-edit {
+		min-width: 138px;
+	}
+
+	.dn-preset-close {
+		display: none;
+	}
+
+	.dn-preset {
+
+		&.dn-opened {
+
+			.dn-preset-edit:not(.dn-preset-close) {
+				display: none;
+			}
+
+			.dn-preset-close {
+				display: flex;
+			}
+		}
+	}
+
+	.dn-preset-link {
+		position: absolute;
+		inset: 0;
+		// top: 0;
+		// right: 0;
+		// bottom: 0;
+		// left: 0;
+	}
+
+	// ------------------------------------------------------------------------------------------------
+	// PRESET CONTENT
+	// ------------------------------------------------------------------------------------------------
+
+	.dn-condition {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: 10px;
+		animation: wd-fadeIn .4s ease both;
+
+		--dn-input-width: 100%;
+
+		> div {
+			flex: 1 0 0%;
+			margin-inline-end: var(--dn-option-space);
+		}
+
+		// select {
+		// 	max-width: 100% !important;
+		// }
+	}
+
+	// .dn-preset-add-condition {
+	// 	width: 100%;
+	// 	border-width: 2px;
+	// 	border-style: dashed;
+	// 	font-size: 13px;
+
+	// 	--dn-input-height: 55px;
+	// }
+
+	// ------------------------------------------------------------------------------------------------
+	// PRESET FOOTER
+	// ------------------------------------------------------------------------------------------------
+
+	.dn-preset-footer {
+		border-top: 1px solid var(--dn-option-border-color);
+	}
+
+	.dn-preset-priority {
+		display: flex;
+		align-items: center;
+
+		--dn-input-width: 70px;
+
+		label {
+			margin-inline-end: var(--dn-option-space);
+			margin-bottom: 0;
+		}
+	}
+
+} // END IF

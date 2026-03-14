@@ -1,0 +1,106 @@
+// ------------------------------------------------------------------------------------------------
+// PATCHER
+// ------------------------------------------------------------------------------------------------
+
+@if $page-patcher {
+
+	.omniverse_page_zs_patcher {
+
+		.dn-box-header {
+			justify-content: space-between;
+		}
+	}
+
+	.dn-patches-notice {
+
+		.dn-success {
+			margin-bottom: 15px;
+		}
+	}
+
+	.dn-patch-item {
+		min-width: 700px;
+
+		> div {
+			width: 100%;
+
+			&:not(:last-child) {
+				margin-inline-end: 15px;
+			}
+		}
+
+		// &.dn-applied {
+
+		// 	.dn-patch-apply {
+		// 		display: none;
+		// 	}
+
+		// 	.dn-patch-label-applied {
+		// 		display: inline-flex;
+		// 	}
+		// }
+	}
+
+	[class*="dn-patch-apply"] {
+			
+		.dn-applied & {
+			display: none;
+		}
+	}
+
+	.dn-patch-label-applied {
+
+		.dn-applied & {
+			display: inline-flex;
+		}
+	}
+
+
+	.dn-patch-label-applied {
+		display: none;
+		align-items: center;
+		min-height: 35px;
+		vertical-align: middle;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 12px;
+
+		&:before {
+			color: var(--dn-secondary-color);
+			font-size: 14px;
+
+			margin-inline-end: 4px;
+		}
+	}
+
+	.dn-patch-date {
+		max-width: 160px;
+		// white-space: nowrap;
+
+		// flex-shrink: 0;
+
+		.dn-table-row & {
+
+			&:before {
+				@include font-icon($dn-icon-clock);
+			}
+		}
+	}
+
+	.dn-patch-id {
+		max-width: 90px;
+	}
+
+	.dn-patch-button-wrapper {
+		max-width: 100px;
+		text-align: end;
+	}
+
+	// .dn-empty-patches {
+
+	// 	p {
+	// 		margin-bottom: 0;
+	// 	}
+	// }
+		
+}

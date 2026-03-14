@@ -1,0 +1,9 @@
+{
+	"assets": [
+		{
+			"id": "image1",
+			"type": "external-image-url",
+			"src": "http://dummy.zynxsol.com/omniverse2/wp-content/uploads/2022/04/page-title-shop.jpg"
+		}
+	]
+}

@@ -1,0 +1,541 @@
+// ------------------------------------------
+// EXTEND OLD
+// ------------------------------------------ 
+
+%omniverse-input-style {
+	border-radius: var(--dn-option-border-radius);
+	box-shadow: none;
+
+	&:hover {
+		border-color: #BDBDBD;
+	}
+
+	&:focus {
+		border-color: #999;
+	}
+}
+
+// ------------------------------------------------------------------------------------------------
+// EXTENDS
+// ------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------------------------
+// BUTTONS
+// ------------------------------------------------------------------------------------------------
+
+// ------------------------------------------
+// GENERAL
+// ------------------------------------------
+
+// @extend %dn-button;
+
+%dn-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	// box-sizing: border-box;
+	padding: 0 15px;
+	height: var(--dn-input-height);
+	outline: none !important;
+	border: none;
+	// background-color: var(--dn-btn-grey-color);
+	box-shadow: none;
+	vertical-align: middle;
+	// color: #444;
+	text-decoration: none;
+	// text-transform: uppercase;
+	white-space: nowrap;
+	font-weight: 600;
+	font-size: 12px;
+	// line-height: var(--dn-input-height);
+	line-height: 1;
+	transition: .2s all ease-in-out !important;
+	transform: none;
+
+	&:hover {
+		// background-color: var(--dn-btn-grey-color-hover);
+		cursor: pointer;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+// ------------------------------------------
+// BUTTON PRIMARY
+// ------------------------------------------
+
+// @extend %dn-button-primary;
+
+%dn-button-primary {
+	background-color: var(--dn-btn-primay-color);
+	color: #FFF !important;
+
+	// &:hover,
+	// &:focus {
+	// 	color: #FFF !important;
+	// }
+}
+
+// @extend %dn-button-primary-hover;
+
+%dn-button-primary-hover {
+
+	&:hover {
+		background-color: var(--dn-btn-primary-color-hover);
+	}
+}
+
+// ------------------------------------------
+// BUTTON ALTERNATIVE
+// ------------------------------------------
+
+// @extend %dn-button-alternative;
+
+%dn-button-alternative {
+	background-color: var(--dn-btn-secondary-color);
+	color: #FFF !important;
+
+	// &:hover,
+	// &:focus {
+	// 	color: #FFF !important;
+	// }
+}
+
+// @extend %dn-button-alternative-hover;
+
+%dn-button-alternative-hover {
+
+	&:hover {
+		background-color: var(--dn-btn-secondary-color-hover);
+	}
+}
+
+// ------------------------------------------
+// BUTTON DEFAULT
+// ------------------------------------------
+
+// @extend %dn-button-default;
+
+%dn-button-default {
+	background-color: var(--dn-btn-grey-color);
+	color: #444 !important;
+
+	// &:hover,
+	// &:focus {
+	// 	color: #444 !important;
+	// }
+}
+
+// @extend %dn-button-default-hover;
+
+%dn-button-default-hover {
+
+	&:hover {
+		background-color: var(--dn-btn-grey-color-hover);
+	}
+}
+
+// ------------------------------------------
+// BUTTON WARNINNG
+// ------------------------------------------
+
+// @extend %dn-button-warning;
+
+%dn-button-warning {
+	background-color: var(--dn-btn-warning-color);
+	color: #FFF !important;
+
+	// &:hover,
+	// &:focus {
+	// 	color: #FFF !important;
+	// }
+}
+
+// @extend %dn-button-warning-hover;
+
+%dn-button-warning-hover {
+
+	&:hover {
+		background-color: var(--dn-btn-warning-color-hover);
+	}
+}
+
+// ------------------------------------------
+// BUTTON WHITE
+// ------------------------------------------
+
+// @extend %dn-button-white;
+
+%dn-button-white {
+	background-color: #FFF;
+	color: #4E4E4E !important;
+
+	// &:hover,
+	// &:focus {
+	// 	color: #FFF !important;
+	// }
+}
+
+// @extend %dn-button-white-hover;
+
+%dn-button-white-hover {
+
+	&:hover {
+		background-color: #FFF;
+		color: #000 !important;
+	}
+}
+
+// ------------------------------------------------------------------------------------------------
+// BUTTONS BORDERED
+// ------------------------------------------------------------------------------------------------
+
+// @extend %dn-bordered-button;
+
+%dn-bordered-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	// box-sizing: border-box;
+	padding: 0 15px;
+	height: var(--dn-input-height);
+	outline: none !important;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: none;
+	vertical-align: middle;
+	// color: #444;
+	// text-decoration: none;
+	// text-transform: uppercase;
+	white-space: nowrap;
+	font-weight: 600;
+	font-size: 12px;
+	// line-height: var(--dn-input-height);
+	line-height: 1;
+	cursor: pointer;
+	transition: .2s all ease-in-out;
+	transform: none;
+
+	&:hover,
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+// ------------------------------------------
+// BUTTON BORDERED PRIMARY
+// ------------------------------------------
+
+// @extend %dn-bordered-button-primary;
+
+%dn-bordered-button-primary {
+	border-color: var(--dn-btn-primay-color);
+	color: var(--dn-btn-primay-color) !important;
+
+	&:hover,
+	&:focus {
+		border-color: var(--dn-btn-primary-color-hover);
+		// background-color: var(--dn-btn-primary-color-hover);
+		background-color: #F7F7F7;
+		color: var(--dn-btn-primay-color) !important;
+	}
+}
+
+// ------------------------------------------
+// BUTTON BORDERED DEFAULT
+// ------------------------------------------
+
+// @extend %dn-bordered-button-default;
+
+%dn-bordered-button-default {
+	border-color: var(--dn-btn-grey-color);
+	// color: var(--dn-btn-primay-color) !important;
+	color: #4E4E4E !important;
+
+	&:hover,
+	&:focus {
+		border-color: var(--dn-btn-grey-color-hover);
+		// background-color: var(--dn-btn-grey-color-hover);
+		background-color: #F7F7F7;
+		color: #444 !important;
+	}
+}
+
+// ------------------------------------------
+// BUTTON BORDERED WARNINNG
+// ------------------------------------------
+
+// @extend %dn-bordered-button-warning;
+
+%dn-bordered-button-warning {
+	border-color: var(--dn-btn-warning-color);
+	color: var(--dn-btn-warning-color) !important;
+
+	&:hover,
+	&:focus {
+		border-color: var(--dn-btn-warning-color-hover);
+		// background-color: var(--dn-btn-warning-color-hover);
+		background-color: #F7F7F7;
+		color: var(--dn-btn-warning-color) !important;
+	}
+}
+
+
+// ------------------------------------------
+// BUTTON BORDERED WHITE
+// ------------------------------------------
+
+// @extend %dn-bordered-button-white;
+
+%dn-bordered-button-white {
+	border-color: #FFF;
+	color: #FFF !important;
+
+	&:hover,
+	&:focus {
+		border-color: #FFF;
+		background-color: #FFF;
+		color: #444 !important;
+	}
+}
+
+// ------------------------------------------
+// BUTTONS SHAPE
+// ------------------------------------------
+
+// @extend %dn-js-loading-fadein;
+
+%dn-js-loading-fadein {
+	animation: wd-fadeIn .2s ease both;
+}
+
+// @extend %dn-fill;
+
+%dn-fill {
+	position: absolute;
+	inset: 0;
+	// top: 0;
+	// right: 0;
+	// bottom: 0;
+	// left: 0;
+}
+
+// ------------------------------------------------------------------------------------------------
+// BUTTONS INLINE
+// ------------------------------------------------------------------------------------------------
+
+// @extend %dn-inline-button;
+
+%dn-inline-button {
+	display: inline-flex;
+	align-items: center;
+	padding: 0;
+	width: auto !important;
+	border: 0;
+	background-color: transparent;
+	box-shadow: none !important;
+	color: #101010;
+	text-decoration: none;
+	// text-transform: uppercase;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all .2s ease-in-out !important;
+
+	&:hover,
+	&:focus {
+		outline: none;
+		box-shadow: none !important;
+		color: inherit;
+		opacity: .8;
+	}
+
+	&:before {
+		position: relative;
+		bottom: -1px;
+		vertical-align: middle;
+
+		margin-inline-end: 5px;
+	}
+}
+
+// ------------------------------------------
+// BUTTONS INLINE PRIMARY
+// ------------------------------------------
+
+// @extend %dn-inline-button-primary;
+
+%dn-inline-button-primary {
+	color: var(--dn-primary-color);
+}
+
+// ------------------------------------------
+// BUTTONS INLINE WARNING
+// ------------------------------------------
+
+// @extend %dn-inline-button-warning;
+
+%dn-inline-button-warning {
+	color: var(--dn-btn-warning-color);
+}
+
+// ------------------------------------------------------------------------------------------------
+// CSS CHECKBOXES
+// ------------------------------------------------------------------------------------------------
+
+%dn-checkbox {
+
+	input[type=checkbox] {
+		position: relative;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		width: 18px !important;
+		height: 18px;
+		border: 1px solid #C5C5C5;
+		border-radius: 3px;
+		box-shadow: none !important;
+		transition: all .15s ease-out;
+
+		margin-inline-end: 5px !important;
+		margin-inline-start: 0 !important;
+
+		&:checked {
+			border: 1px solid var(--dn-btn-primay-color);
+			background-color: var(--dn-btn-primay-color);
+
+			&:before {
+				opacity: 1;
+				transform: scale(1);
+
+				@include font-icon($dn-icon-validation-check);
+			}
+		}
+
+		&:before {
+			position: absolute;
+			top: 2px;
+			display: block;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			color: #FFF;
+			font-weight: 400;
+			font-size: 10px;
+			line-height: 19px;
+			opacity: 0;
+			transition: all .15s ease-out;
+			transform: scale(.5);
+
+			inset-inline-start: 2px;
+
+			// @include font-icon($dn-icon-validation-check);
+		}
+
+		&:disabled {
+			opacity: .5;
+			cursor: default;
+
+			+ label {
+				opacity: .5;
+				cursor: default;
+			}
+		}
+
+		&:hover:not(:disabled) {
+			border: 1px solid var(--dn-btn-primay-color);
+		}
+
+		+ label {
+			user-select: none;
+		}
+	}
+}
+
+// ------------------------------------------------------------------------------------------------
+// MIXINS
+// ------------------------------------------------------------------------------------------------
+
+//------------------------------------------
+// SIMPLE LOADER
+// -----------------------------------------
+
+
+// @include loader;
+
+@mixin loader($size: 18px, $b-width: 1px, $color-loader: #BBB, $color-border: #000) {
+	content: "";
+	display: inline-block;
+	width: $size;
+	height: $size;
+	border: $b-width solid $color-loader;
+	border-left-color: $color-border;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+// @include act-loader;
+
+@mixin act-loader {
+	animation: omniverse_rotate 450ms infinite linear;
+}
+
+//------------------------------------------
+// BACKGROUND LOADER
+// -----------------------------------------
+
+// @include dn-bg-loader;
+
+@mixin dn-bg-loader($bg-color: rgba(255,255,255,.8)) {
+
+	&:before,
+	&:after {
+		position: absolute;
+		// z-index: $z-layer-10;
+		z-index: 999999;
+		visibility: hidden;
+		opacity: 0;
+		cursor: wait;
+
+		// visibility: visible;
+		// opacity: 1;
+		// transition: .4s all ease;
+		// pointer-events: none;
+	}
+
+	&:before {
+		content: "";
+		inset: 0;
+		// top: 0;
+		// right: 0;
+		// bottom: 0;
+		// left: 0;
+		border-radius: var(--dn-brd-radius);
+		background-color: $bg-color;
+	}
+
+	&:after {
+		top: calc(50% - 18px);
+		right: calc(50% - 18px);
+
+		@include loader(36px,1px,rgba(255,255,255,.15));
+	}
+}
+
+// @include dn-act-bg-loader;
+
+@mixin dn-act-bg-loader {
+
+	&:before,
+	&:after {
+		visibility: visible;
+		opacity: 1;
+		transition: .4s all ease;
+	}
+
+
+	&:after {
+		@include act-loader;
+	}
+}

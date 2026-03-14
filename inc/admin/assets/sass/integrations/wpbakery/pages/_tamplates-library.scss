@@ -1,0 +1,121 @@
+// ------------------------------------------------------------------------------------------------
+// TEMPLATES LIBRARY
+// ------------------------------------------------------------------------------------------------
+
+@if $int-wpbakery {
+
+	[data-vc-ui-element-target="[data-tab=omniverse_templates]"] {
+		position: relative;
+		padding-inline-start: 35px !important;
+
+		&:before {
+			position: absolute;
+			top: calc(50% - 9px);
+			inset-inline-start: 10px;
+			font-size: 18px;
+
+			@include font-icon($dn-icon-logo-zynxsol);
+		}
+	}
+
+	.dn-wpb-templates {
+		margin-top: -18px;
+		min-height: 700px;
+		width: 100%;
+		box-shadow: none;
+		max-width: none;
+
+		.dn-box-header {
+
+			h3 {
+				display: block;
+			}
+		}
+	}
+
+	.dn-wpb-templates-content {
+		display: flex;
+		flex-wrap: wrap;
+		// min-height: 200px;
+		padding-inline-end: 0;
+		padding-inline-start: calc(20% + 40px);
+	}
+
+	.vc_templates-panel {
+
+		&.vc_active {
+
+			.dn-wpb-templates-content {
+
+				&:after {
+					position: fixed; // NOTE LOADER
+				}
+			}
+		}
+	}
+
+	// ------------------------------------------
+	// TEMPLATES FILTERS
+	// ------------------------------------------
+
+	.omniverse-templates-tags {
+		position: absolute;
+		top: 20px;
+		inset-inline-start: 15px;
+		padding-bottom: 20px;
+		max-width: 20%;
+		width: 100%;
+	}
+
+	// ------------------------------------------
+	// TEMPLATES ITEMS
+	// ------------------------------------------
+
+	.omniverse-template-item {
+		flex: 1 0 calc(33.33333% - 20px);
+		margin-inline-end: 20px;
+		margin-bottom: 20px;
+		max-width: calc(33.33333% - 20px);
+
+		&.omniverse-template-loading {
+			opacity: .5;
+
+			a {
+				pointer-events: none;
+			}
+		}
+
+		&:is(
+		.show-by-search,
+		.show-by-tag) {
+			display: block !important;
+		}
+
+		&:is(
+		.hide-by-tag,
+		.hide-by-search) {
+			display: none !important;
+		}
+	}
+
+	.omniverse-template-image {
+
+		img {
+			height: 100%;
+			object-fit: contain;
+		}
+
+		.element-adding & {
+
+			a {
+				pointer-events: none;
+			}
+
+			// &:before,
+			// > a {
+			// 	display: none;
+			// }
+		}
+	}
+
+} // END IF

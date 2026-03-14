@@ -1,0 +1,28 @@
+// ------------------------------------------------------------------------------------------------
+// BACKUP
+// ------------------------------------------------------------------------------------------------
+
+@if $general {
+
+	.dn-backup-date {
+
+		.dn-table-row & {
+
+			&:before {
+				@include font-icon($dn-icon-clock);
+			}
+		}
+	}
+
+	.dn-backup-action {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		max-width: 250px;
+
+		> a {
+			margin-inline-start: 8px;
+		}
+	}
+
+} // END IF

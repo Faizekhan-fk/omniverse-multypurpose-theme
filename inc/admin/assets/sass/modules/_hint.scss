@@ -1,0 +1,50 @@
+// ------------------------------------------------------------------------------------
+// DN TOOLTIPS
+// ------------------------------------------------------------------------------------
+
+@if $general {
+
+	.dn-hint {
+		position: relative;
+		// z-index: $z-layer-6;
+		z-index: 99999; // NOTE FOR SELECT 2
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 16px;
+		height: 16px;
+		border: 1px solid var(--dn-hint-color);
+		border-radius: 50%;
+		background-color: #FFF;
+		vertical-align: middle;
+		cursor: help;
+		transition: all .2s ease;
+
+		--dn-hint-color: #A0A0A0;
+
+		&:before {
+			content: "?";
+			color: var(--dn-hint-color);
+			font-weight: 600;
+			font-size: 11px;
+			line-height: 1;
+			transition: inherit;
+		}
+
+		&:hover {
+			--dn-hint-color: #CCC;
+		}
+
+		&.dn-loading {
+
+			.dn-tooltip-inner {
+				min-height: 282px;
+			}
+		}
+
+		.wp-list-table & {
+			margin-inline-start: 5px;
+		}
+	}
+
+} // END IF

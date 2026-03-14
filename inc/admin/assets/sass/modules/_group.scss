@@ -1,0 +1,327 @@
+// ------------------------------------------------------------------------------------------------
+// DN GROUP
+// ------------------------------------------------------------------------------------------------
+
+@if $general {
+
+	.dn-group-title,
+	.dn-fields-group {
+		flex-grow: 1;
+		flex-basis: 100%;
+	}
+
+	.dn-group-title {
+		margin-bottom: 20px;
+
+		@extend %group-title;
+	}
+
+	.dn-group {
+		margin-bottom: var(--dn-group-sp);
+		padding: var(--dn-group-sp);
+		border-radius: var(--dn-brd-radius);
+		background-color: var(--dn-group-bg-color);
+
+		--dn-option-border-color: var(--dn-option-border-color-darker-10);
+
+		.dn-group {
+			--dn-group-bg-color: #FFF;
+		}
+	}
+
+	.dn-fields-group {
+		display: flex;
+		flex-wrap: wrap;
+		padding-bottom: .1px;
+
+		gap: inherit;
+	}
+
+	// ------------------------------------------------------------------------------------------------
+	// WPB GROUP
+	// ------------------------------------------------------------------------------------------------
+
+	.omniverse-td-title {
+		width: 100%;
+		@extend %group-title;
+	}
+
+	// .dn-accordion {
+	// 	margin-bottom: 0 !important;
+
+	// 	> .vc_column {
+	// 		margin-bottom: 0 !important;
+	// 	}
+
+	// 	.omniverse-td-title {
+	// 		position: relative;
+	// 		padding-top: 15px;
+	// 		padding-bottom: 15px;
+	// 		transition: all .3s ease;
+	// 		cursor: pointer;
+		
+	// 		&:before {
+	// 			content: "\e907";
+	// 			font-weight: 400;
+	// 			font-family: "dn-icon-font";
+	// 			position: absolute;
+	// 			top: calc(50% - 10px);
+	// 			inset-inline-end: 0;
+	// 			display: block;
+	// 			width: 20px;
+	// 			height: 20px;
+	// 			font-size: 16px;
+	// 			transition: all .3s ease;
+	// 			text-align: center;
+	// 		}
+
+	// 		&:hover {
+	// 			opacity: .7;
+	// 		}
+	// 	}
+
+	// 	.omniverse-td-content {
+	// 		// display: flex !important;
+	// 		opacity: 0;
+	// 		transition: opacity .5s ease;
+	// 		// overflow: hidden;
+
+	// 		// > div {
+	// 		// 	opacity: 0;
+	// 		// }
+	// 	}
+
+	// 	&.dn-active {
+
+	// 		.omniverse-td-title {
+				
+	// 			&:before {
+	// 				transform: rotate(180deg);
+	// 			}
+	// 		}
+
+	// 		.omniverse-td-content {
+	// 			opacity: 1;
+	// 		}
+	// 	}
+
+	// 	// &:not(.dn-active) {
+
+	// 	// 	.omniverse-td-content {
+	// 	// 		height: 0;
+	// 	// 		padding: 0;
+	// 	// 		margin: 0;
+	// 	// 	}
+	// 	// }
+
+	// 	&:not(:last-child) {
+			
+	// 		.omniverse-td-title {
+
+	// 			&:after {
+	// 				content: "";
+	// 				display: block;
+	// 				position: absolute;
+	// 				bottom: 0;
+	// 				height: 1px;
+	// 				left: 0;
+	// 				right: 0;
+	// 				width: 100%;
+	// 				background-color: var(--dn-option-border-color);
+	// 			}
+	// 		}
+
+	// 		&.dn-active {
+
+	// 			.omniverse-td-title {
+
+	// 				&:after {
+	// 					opacity: 0;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	// .dn-accordion:first-child,
+	// [data-vc-shortcode-param-name="omniverse_css_id"] + .dn-accordion {
+	// 	margin-top: -15px;
+	// }
+
+
+	:is(
+	.vc_param_group-wrapper,
+	.omniverse-td-content) {
+		display: flex;
+		clear: both;
+		flex-wrap: wrap;
+		// margin-top: 0;
+		margin-right: 15px;
+		margin-left: 15px;
+		padding-top: 20px;
+
+		--dn-group-sp: 5px;
+
+		.vc_column {
+
+			select {
+				padding: 6px 6px;
+				height: 36px;
+			}
+
+			// &.wpb_el_type_omniverse_image_select {
+			// 	margin-bottom: 5px;
+			// }
+		}
+
+		.wpb_el_type_vc_link {
+
+			.button {
+				height: 36px;
+				border-radius: var(--dn-option-border-radius);
+				box-shadow: none;
+				line-height: 34px;
+			}
+
+			.vc_link_label {
+				line-height: 36px;
+			}
+		}
+
+		.wpb_el_type_attach_image {
+
+			:is(
+			.added,
+			.gallery_widget_add_images) {
+				border-radius: var(--dn-option-border-radius);
+				background-color: #FFF;
+			}
+		}
+
+		.wp-media-buttons {
+
+			button {
+				border-radius: var(--dn-option-border-radius);
+				box-shadow: none;
+			}
+		}
+	}
+
+	.dn-group {
+		
+		.vc_param_group-list {
+
+			:is(
+			.wpb_element_wrapper,
+			.vc_move-param) {
+				background-color: #FFF !important;
+			}
+
+			// .dn-group {
+			// 	margin: 0 0 -15px 0;
+			// 	padding: 0;
+			// }
+
+			.wpb_sortable {
+				margin-bottom: 0;
+			}
+
+			// .omniverse-td-wrapper {
+
+			// 	&:last-child {
+			// 		margin-bottom: 0;
+			// 	}
+			// }
+
+			.wpb_element_wrapper {
+				border-bottom-left-radius: var(--dn-brd-radius);
+				border-bottom-right-radius: var(--dn-brd-radius);
+			}
+
+			.vc_move-param {
+				border-top-left-radius: var(--dn-brd-radius);
+				border-top-right-radius: var(--dn-brd-radius);
+			}
+
+			.vc_param_group-add_content {
+				margin-top: 15px;
+				margin-bottom: 0;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// ------------------------------------------------------------------------------------------------
+	// WHB GROUP
+	// ------------------------------------------------------------------------------------------------
+
+	.whb-field-section-title {
+		margin-bottom: 15px;
+		width: 100%;
+
+		@extend %group-title;
+	}
+
+	.whb-option-fields {
+		display: flex;
+		flex-wrap: wrap;
+		// margin-bottom: 20px;
+		// padding: 20px 20px 5px 20px;
+
+		gap: 0 15px;
+
+		> .whb-field-description {
+			margin-top: 0 !important;
+			// margin-bottom: 15px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.whb-popup-content {
+		--dn-group-sp: 30px;
+		padding: 0;
+		overflow: unset;
+		max-height: none;
+
+		:is(
+		.dn-group-title,
+		.dn-group) {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		.dn-group {
+			padding: 30px 10px 0px 10px;
+
+			&:last-child {
+				margin-bottom: 20px;
+			}
+		}
+
+		// .dn-popup-content-inn {
+		// 	padding: 20px;
+		// 	overflow-x: hidden;
+		// 	overflow-y: auto;
+		// 	max-height: 60vh;
+		// }
+	}
+
+} // END IF
+
+// ------------------------------------------------------------------------------------------------
+// EXTENDS
+// ------------------------------------------------------------------------------------------------
+
+// @extend %group-title;
+
+%group-title {
+	color: #23282D;
+	font-weight: 600;
+	font-size: 18px;
+}
