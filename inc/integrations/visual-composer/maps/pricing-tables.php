@@ -290,7 +290,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_pricing_plan' ) ) {
 						'default' => OMNIVERSE_ASSETS_IMAGES . '/settings/pricing-table/default.png',
 						'alt' => OMNIVERSE_ASSETS_IMAGES . '/settings/pricing-table/alt.png',
 					),
-					'wood_tooltip' => true,
+					'omni_tooltip' => true,
 					'std' => 'default',
 					'edit_field_class' => 'vc_col-sm-6 vc_column price-plan',
 				),

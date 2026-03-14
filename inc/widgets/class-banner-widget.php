@@ -131,7 +131,7 @@ if ( ! class_exists( 'OMNIVERSE_Banner_Widget' ) ) {
 								'background'         => OMNIVERSE_ASSETS_IMAGES . '/settings/banner-style/background.png',
 								'content-background' => OMNIVERSE_ASSETS_IMAGES . '/settings/banner-style/content-background.png',
 							),
-							'wood_tooltip'     => true,
+							'omni_tooltip'     => true,
 							'hint'             => esc_html__( 'You can use some of our predefined styles for your banner content.', 'omniverse' ),
 							'edit_field_class' => 'vc_col-xs-12 vc_column banner-style',
 						),
@@ -681,7 +681,7 @@ if ( ! class_exists( 'OMNIVERSE_Banner_Widget' ) ) {
 								'right'  => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/horizontal/right.png',
 							),
 							'std'              => 'left',
-							'wood_tooltip'     => true,
+							'omni_tooltip'     => true,
 							'edit_field_class' => 'vc_col-sm-6 vc_column content-position',
 						),
 						array(
@@ -700,7 +700,7 @@ if ( ! class_exists( 'OMNIVERSE_Banner_Widget' ) ) {
 								'bottom' => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/vertical/bottom.png',
 							),
 							'std'              => 'top',
-							'wood_tooltip'     => true,
+							'omni_tooltip'     => true,
 							'edit_field_class' => 'vc_col-sm-6 vc_column content-position',
 						),
 						array(
@@ -719,7 +719,7 @@ if ( ! class_exists( 'OMNIVERSE_Banner_Widget' ) ) {
 								'right'  => OMNIVERSE_ASSETS_IMAGES . '/settings/align/right.jpg',
 							),
 							'std'              => 'left',
-							'wood_tooltip'     => true,
+							'omni_tooltip'     => true,
 							'edit_field_class' => 'vc_col-sm-6 vc_column title-align',
 						),
 						array(

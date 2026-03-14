@@ -11,7 +11,7 @@
 
 	// Lazy loading.
 	$boxContent.on('scroll', function() {
-		$(document).trigger('wood-images-loaded');
+		$(document).trigger('omni-images-loaded');
 	});
 
 	// Import.
@@ -329,7 +329,7 @@
 			}
 		});
 
-		$(document).trigger('wood-images-loaded');
+		$(document).trigger('omni-images-loaded');
 
 		if (0 === $('.dn-search-show').length) {
 			clearNotices();
@@ -351,7 +351,7 @@
 		$catItem.addClass('dn-active');
 		$catItem.siblings().removeClass('dn-active');
 
-		$(document).trigger('wood-images-loaded');
+		$(document).trigger('omni-images-loaded');
 
 		// Reset.
 		$input.val('');
@@ -379,7 +379,7 @@
 
 		$listItem.addClass('dn-active');
 		$listItem.siblings().removeClass('dn-active');
-		$(document).trigger('wood-images-loaded');
+		$(document).trigger('omni-images-loaded');
 
 		$items.each(function() {
 			var $item = $(this);

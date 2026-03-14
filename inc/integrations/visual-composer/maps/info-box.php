@@ -110,7 +110,7 @@ if ( ! function_exists( 'omniverse_get_info_box_shortcode_params' ) ) {
 						esc_html__( 'With background', 'omniverse' ) => 'with-bg',
 						esc_html__( 'With border', 'omniverse' ) => 'with-border',
 					),
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'images_value'     => array(
 						'simple'      => OMNIVERSE_ASSETS_IMAGES . '/settings/infobox/style/simple.png',
 						'with-bg'     => OMNIVERSE_ASSETS_IMAGES . '/settings/infobox/style/with-bg.png',
@@ -667,7 +667,7 @@ if ( ! function_exists( 'omniverse_get_info_box_shortcode_params' ) ) {
 						'right'  => OMNIVERSE_ASSETS_IMAGES . '/settings/align/right.jpg',
 					),
 					'std'              => 'left',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column title-align',
 				),
 				array(
@@ -689,7 +689,7 @@ if ( ! function_exists( 'omniverse_get_info_box_shortcode_params' ) ) {
 						'right' => OMNIVERSE_ASSETS_IMAGES . '/settings/infobox/position/right.png',
 					),
 					'std'              => 'top',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
 				array(
@@ -707,7 +707,7 @@ if ( ! function_exists( 'omniverse_get_info_box_shortcode_params' ) ) {
 						'bottom' => OMNIVERSE_ASSETS_IMAGES . '/settings/infobox/vertical-position/bottom.png',
 					),
 					'std'              => 'top',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'dependency'       => array(
 						'element' => 'image_alignment',
 						'value'   => array( 'left', 'right' ),

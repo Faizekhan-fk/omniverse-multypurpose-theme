@@ -46,7 +46,7 @@
 			omniverseThemeModule.$document.trigger('wdFiltersOpened');
 
 			omniverseThemeModule.$body.removeClass('body-filters-opened');
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		}, time);
 	};
 

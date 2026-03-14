@@ -62,7 +62,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_row_divider' ) ) {
 						'paint-stroke' => OMNIVERSE_ASSETS_IMAGES . '/settings/dividers/paint-stroke.png',
 						'sweet-wave' => OMNIVERSE_ASSETS_IMAGES . '/settings/dividers/sweet-wave.png',
 					),
-					'wood_tooltip' => true,
+					'omni_tooltip' => true,
 					'std' => 'waves-small',
 					'edit_field_class' => 'vc_col-xs-12 vc_column divider',
 				),

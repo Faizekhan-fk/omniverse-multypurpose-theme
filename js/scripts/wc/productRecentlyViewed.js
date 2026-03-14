@@ -27,7 +27,7 @@
 							}
 
 							omniverseThemeModule.$document.trigger('wdRecentlyViewedProductLoaded');
-							omniverseThemeModule.$document.trigger('wood-images-loaded');
+							omniverseThemeModule.$document.trigger('omni-images-loaded');
 						});
 					}
 				},

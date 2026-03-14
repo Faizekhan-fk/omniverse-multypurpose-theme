@@ -37,7 +37,7 @@
 				}
 			});
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		};
 
 		$('.omniverse-open-newsletter').on('click', function(e) {

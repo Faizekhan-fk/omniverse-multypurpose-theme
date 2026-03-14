@@ -165,7 +165,7 @@
 			}
 		}
 
-		$panel.trigger('woodDivider.added');
+		$panel.trigger('omniDivider.added');
 	});
 
 	function hideDividerWrapper($divider) {
@@ -181,7 +181,7 @@
 		hideDividerWrapper($(this));
 	});
 
-	$panel.on('woodDivider.added', function() {
+	$panel.on('omniDivider.added', function() {
 		$('.wpb_el_type_omniverse_title_divider').each(function() {
 			hideDividerWrapper($(this));
 		});

@@ -34,7 +34,7 @@
 							}, 10);
 
 							omniverseThemeModule.$document.trigger('wdSearchFullScreenContentLoaded');
-							omniverseThemeModule.$document.trigger('wood-images-loaded');
+							omniverseThemeModule.$document.trigger('omni-images-loaded');
 						}
 					},
 					error   : function() {

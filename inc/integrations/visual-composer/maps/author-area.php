@@ -102,7 +102,7 @@ if( ! function_exists( 'omniverse_get_author_area_params' ) ) {
 					'right' => OMNIVERSE_ASSETS_IMAGES . '/settings/align/right.jpg',
 				),
 				'std' => 'left',
-				'wood_tooltip' => true,
+				'omni_tooltip' => true,
 				'hint' => esc_html__( 'Select image alignment.', 'omniverse' ),
 				'edit_field_class' => 'vc_col-sm-6 vc_column title-align',
 			),

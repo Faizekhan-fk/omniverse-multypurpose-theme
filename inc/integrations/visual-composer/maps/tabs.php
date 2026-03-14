@@ -72,7 +72,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_tabs' ) ) {
 						'aside'   => OMNIVERSE_ASSETS_IMAGES . '/settings/ajax-tabs/aside.png',
 					),
 					'std'              => 'default',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-xs-12 vc_column tab-design',
 				),
 				array(
@@ -209,7 +209,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_tabs' ) ) {
 						'element' => 'design',
 						'value'   => array( 'default' ),
 					),
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column title-align',
 				),
 				/**
@@ -304,7 +304,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_tabs' ) ) {
 						'right' => OMNIVERSE_ASSETS_IMAGES . '/settings/infobox/position/right.png',
 					),
 					'std'              => 'left',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column title-align',
 				),
 				array(

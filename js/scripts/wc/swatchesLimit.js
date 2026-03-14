@@ -22,7 +22,7 @@
 				$this.parents('.wd-products.grid-masonry').isotope('layout');
 			}
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 	};
 

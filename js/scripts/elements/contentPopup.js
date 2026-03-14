@@ -27,7 +27,7 @@
 					this.st.mainClass = 'mfp-move-horizontal content-popup-wrapper';
 				},
 				open      : function() {
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 					omniverseThemeModule.$document.trigger('wdOpenPopup');
 				}
 			}

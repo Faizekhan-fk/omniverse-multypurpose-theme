@@ -19,7 +19,7 @@
 					context.html(html);
 					afterRender();
 					omniverseThemeModule.$document.trigger('wdPortfolioPjaxComplete');
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				});
 			}
 		});
@@ -43,7 +43,7 @@
 				return;
 			}
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 
 			scrollToTop(false);
 

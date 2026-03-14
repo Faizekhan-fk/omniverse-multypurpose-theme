@@ -3,7 +3,7 @@
 		<div class="dn-row">
 			<div class="dn-col">
 				<a class="dn-logo" href="https://zynxsol.com/" target="_blank">
-					<img src="<?php echo esc_url( OMNIVERSE_ASSETS_IMAGES . '/xtemos-logo-dark.svg' ); ?>" alt="<?php	esc_html_e( 'Logo', 'woodmart' ); ?>">
+					<img src="<?php echo esc_url( OMNIVERSE_ASSETS_IMAGES . '/zynxsol-logo-dark.svg' ); ?>" alt="<?php	esc_html_e( 'Logo', 'omniverse' ); ?>">
 				</a>
 			</div>
 			<div class="dn-col-auto">
@@ -17,7 +17,7 @@
 									'new_window' => true,
 								],
 								'icon' => 'documentation',
-								'text' => esc_html__( 'Documentation', 'woodmart' ),
+								'text' => esc_html__( 'Documentation', 'omniverse' ),
 							],
 							[
 								'link' => [
@@ -25,7 +25,7 @@
 									'new_window' => true,
 								],
 								'icon' => 'rate-theme',
-								'text' => esc_html__( 'Rate our theme', 'woodmart' ),
+								'text' => esc_html__( 'Rate our theme', 'omniverse' ),
 							],
 						],
 					]

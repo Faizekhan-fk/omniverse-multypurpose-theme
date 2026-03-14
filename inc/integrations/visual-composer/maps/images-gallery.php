@@ -323,7 +323,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_gallery' ) ) {
 						'right'  => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/horizontal/right.png',
 					),
 					'std'              => 'center',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column content-position',
 					'dependency'       => array(
 						'element' => 'view',
@@ -345,7 +345,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_gallery' ) ) {
 						'bottom' => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/vertical/bottom.png',
 					),
 					'std'              => 'middle',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column content-position',
 					'dependency'       => array(
 						'element' => 'view',

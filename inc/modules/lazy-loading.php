@@ -201,7 +201,7 @@ if( ! function_exists( 'omniverse_lazy_replace_image' ) ) {
 
 		$class = omniverse_lazy_css_class();
 
-		$new = preg_replace( '/<img(.*?)src=/is', '<img$1src="'.$src.'" data-wood-src=', $html );
+		$new = preg_replace( '/<img(.*?)src=/is', '<img$1src="'.$src.'" data-omni-src=', $html );
 		$new = preg_replace( '/<img(.*?)srcset=/is', '<img$1srcset="" data-srcset=', $new );
 
 
@@ -222,7 +222,7 @@ if( ! function_exists( 'omniverse_lazy_replace_image' ) ) {
 if( ! function_exists( 'omniverse_lazy_attributes' ) ) {
 	function omniverse_lazy_attributes($attr, $attachment, $size) {
 
-		$attr['data-wood-src'] = $attr['src'];
+		$attr['data-omni-src'] = $attr['src'];
 		if( isset( $attr['srcset'] ) ) $attr['data-srcset'] = $attr['srcset'];
 
 		if ( is_object( $attachment ) ) {

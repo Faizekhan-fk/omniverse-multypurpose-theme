@@ -7,7 +7,7 @@ if( ! function_exists( 'omniverse_add_image_select_type' ) ) {
 	function omniverse_add_image_select_type( $settings, $value ) {
 		$settings_value = array_flip( $settings['value'] );
 		$value = ( ! $value && isset( $settings['std'] ) ) ? $settings['std'] : $value;
-		$tooltip = ( isset( $settings['wood_tooltip'] ) ) ? $settings['wood_tooltip'] : false;
+		$tooltip = ( isset( $settings['omni_tooltip'] ) ) ? $settings['omni_tooltip'] : false;
 		$title = ( isset( $settings['title'] ) ) ? $settings['title'] : true;
 		$classes = $tooltip ? 'omniverse-css-tooltip' : '';
 		$classes .= ! $tooltip && $title ? ' with-title' : '';

@@ -32,22 +32,22 @@
 
 		var pItem = document.getElementsByClassName('wd-lazy-load'), pCount, timer;
 
-		omniverseThemeModule.$document.on('wood-images-loaded added_to_cart updated_checkout', function() {
+		omniverseThemeModule.$document.on('omni-images-loaded added_to_cart updated_checkout', function() {
 			inView();
 		});
 
 		// Fix for menu.
 		omniverseThemeModule.$body.on('click', '.wd-header-mobile-nav > a, .wd-nav-opener, .wd-btn-show-cat', function() {
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 
 		$('.wd-scroll-content').on('scroll', function() {
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 
 		// WooCommerce tabs fix
 		$('.wc-tabs > li').on('click', function() {
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 
 		// scroll and resize events
@@ -111,15 +111,15 @@
 
 			if (item.querySelector('img') !== null) {
 				item.querySelector('img').onload = addedImg;
-				item.querySelector('img').src = item.dataset.woodSrc;
-				item.querySelector('source').srcset = item.dataset.woodSrc;
+				item.querySelector('img').src = item.dataset.omniSrc;
+				item.querySelector('source').srcset = item.dataset.omniSrc;
 
 				if (typeof (item.dataset.srcset) != 'undefined') {
 					item.querySelector('img').srcset = item.dataset.srcset;
 				}
 			}
 
-			item.src = item.dataset.woodSrc;
+			item.src = item.dataset.omniSrc;
 			if (typeof (item.dataset.srcset) != 'undefined') {
 				item.srcset = item.dataset.srcset;
 			}

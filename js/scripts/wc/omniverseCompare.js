@@ -194,7 +194,7 @@
 
 			setTimeout(function() {
 				$activeCompareTable.addClass('wd-in');
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			}, animationTime * 2);
 		});
 
@@ -251,7 +251,7 @@
 
 					setTimeout(function() {
 						$compareTable.addClass('wd-in');
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 					}, 200);
 				}
 			});

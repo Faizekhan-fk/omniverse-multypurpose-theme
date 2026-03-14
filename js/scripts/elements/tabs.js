@@ -44,7 +44,7 @@
 					$activeContent.addClass(animationClass);
 
 					omniverseThemeModule.$document.trigger('resize.vcRowBehaviour');
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				}, animationTime * 2);
 			});
 

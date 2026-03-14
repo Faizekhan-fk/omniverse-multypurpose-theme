@@ -305,7 +305,7 @@ if ( ! function_exists( 'omniverse_shortcode_slider' ) ) {
 								<div class="container wd-slide-container<?php echo omniverse_get_old_classes( ' omniverse-slide-container' ); ?><?php echo omniverse_get_slide_class( $slide->ID ); // phpcs:ignore ?>">
 									<div class="wd-slide-inner<?php echo omniverse_get_old_classes( ' omniverse-slide-inner' ); ?> <?php echo ( ! empty( $slide_animation ) && 'none' !== $slide_animation ) ? 'wd-animation-normal  wd-animation-' . esc_attr( $slide_animation ) : ''; // phpcs:ignore ?>">
 										<?php if ( omniverse_is_elementor_installed() && Elementor\Plugin::$instance->documents->get( $slide->ID )->is_built_with_elementor() ) : ?>
-											<?php echo omniverse_elementor_get_content( $slide->ID, apply_filters('woodamrt_enqueue_inline_slide_style', true ) ); // phpcs:ignore ?>
+											<?php echo omniverse_elementor_get_content( $slide->ID, apply_filters('omniamrt_enqueue_inline_slide_style', true ) ); // phpcs:ignore ?>
 										<?php else : ?>
 											<?php echo apply_filters( 'the_content', $slide->post_content ); // phpcs:ignore ?>
 										<?php endif; ?>

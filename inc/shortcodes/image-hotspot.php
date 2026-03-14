@@ -173,7 +173,7 @@ if ( ! function_exists( 'omniverse_hotspot_shortcode' ) ) {
 					'height'        => true,
 					'src'           => true,
 					'alt'           => true,
-					'data-wood-src' => true,
+					'data-omni-src' => true,
 					'data-srcset'   => true,
 					'class'         => true,
 				),

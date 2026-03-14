@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Xtemos Studio\n"
+"Language-Team: Zynxsol Studio\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
 #: inc/admin/modules/options/class-presets.php:523

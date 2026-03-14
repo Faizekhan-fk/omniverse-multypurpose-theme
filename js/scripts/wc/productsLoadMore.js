@@ -113,7 +113,7 @@
 							holder.parent().trigger('recalc');
 						});
 
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 						omniverseThemeModule.$document.trigger('wdArrowsLoadProducts');
 					}
 
@@ -189,7 +189,7 @@
 						});
 					}
 
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 					omniverseThemeModule.$document.trigger('wdLoadMoreLoadProducts');
 
 					holder.data('paged', paged);

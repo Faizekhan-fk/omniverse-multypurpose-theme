@@ -20,7 +20,7 @@
 					context.html(html);
 					afterRender();
 					omniverseThemeModule.$document.trigger('wdShopPageInit');
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				});
 			}
 		});
@@ -39,7 +39,7 @@
 							context.html(html);
 							afterRender();
 							omniverseThemeModule.$document.trigger('wdShopPageInit');
-							omniverseThemeModule.$document.trigger('wood-images-loaded');
+							omniverseThemeModule.$document.trigger('omni-images-loaded');
 						});
 					}
 				});
@@ -71,10 +71,10 @@
 
 			scrollToTop(false);
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 
 			$('.wd-scroll-content').on('scroll', function() {
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			});
 
 			if (typeof omniverse_wpml_js_data !== 'undefined' && omniverse_wpml_js_data.languages) {

@@ -90,7 +90,7 @@
 						onSearchComplete: function() {
 							$this.removeClass('search-loading');
 
-							omniverseThemeModule.$document.trigger('wood-images-loaded');
+							omniverseThemeModule.$document.trigger('omni-images-loaded');
 
 						},
 						formatResult    : function(suggestion, currentValue) {

@@ -63,7 +63,7 @@
 					$video[0].play();
 				},
 				open        : function() {
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 					omniverseThemeModule.$window.resize();
 				},
 				close       : function(e) {

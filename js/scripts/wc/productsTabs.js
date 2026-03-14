@@ -50,7 +50,7 @@
 								$inner.find('.wd-products-element').addClass('wd-in');
 
 								omniverseThemeModule.$document.trigger('wdProductsTabsLoaded');
-								omniverseThemeModule.$document.trigger('wood-images-loaded');
+								omniverseThemeModule.$document.trigger('omni-images-loaded');
 							}, 200);
 
 							$this.removeClass('loading');

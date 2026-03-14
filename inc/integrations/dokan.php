@@ -32,7 +32,7 @@ if ( ! function_exists( 'omniverse_dokan_lazy_load_fix' ) ) {
 				'height'        => array(),
 				'src'           => array(),
 				'width'         => array(),
-				'data-wood-src' => array(),
+				'data-omni-src' => array(),
 				'data-srcset'   => array(),
 			),
 		);

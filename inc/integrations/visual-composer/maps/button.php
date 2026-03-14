@@ -347,7 +347,7 @@ if ( ! function_exists( 'omniverse_get_button_shortcode_params' ) ) {
 						'value_not_equal_to' => array( 'yes' ),
 					),
 					'std'              => 'center',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column title-align',
 				),
 

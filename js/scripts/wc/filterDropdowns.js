@@ -57,7 +57,7 @@
 						context.html(html);
 						afterRender();
 						omniverseThemeModule.$document.trigger('wdShopPageInit');
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 					});
 				}
 			});

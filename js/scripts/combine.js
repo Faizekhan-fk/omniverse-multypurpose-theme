@@ -192,7 +192,7 @@ var omniverseThemeModule = {};
 				slideChange: function() {
 					document.querySelector('.woocommerce-product-gallery__wrapper.wd-carousel').dispatchEvent(new CustomEvent('wdSlideChange', { activeIndex: this.activeIndex}));
 
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				}
 			}
 		};
@@ -628,7 +628,7 @@ window.addEventListener('load',function() {
 				$wrapper.addClass('wd-inited');
 
 				omniverseThemeModule.$document.trigger('resize.vcRowBehaviour');
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			};
 
 			var deactivateActiveTab = function() {
@@ -814,7 +814,7 @@ window.addEventListener('load',function() {
 					this.st.mainClass = 'mfp-move-horizontal content-popup-wrapper';
 				},
 				open      : function() {
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 					omniverseThemeModule.$document.trigger('wdOpenPopup');
 				}
 			}
@@ -1080,7 +1080,7 @@ window.addEventListener('load',function() {
 				}
 
 				setContentPosition();
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 				return false;
 			});
 
@@ -1876,7 +1876,7 @@ window.addEventListener('load',function() {
 					$activeContent.addClass(animationClass);
 
 					omniverseThemeModule.$document.trigger('resize.vcRowBehaviour');
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				}, animationTime * 2);
 			});
 
@@ -2004,7 +2004,7 @@ window.addEventListener('load',function() {
 					$video[0].play();
 				},
 				open        : function() {
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 					omniverseThemeModule.$window.resize();
 				},
 				close       : function(e) {
@@ -2266,7 +2266,7 @@ jQuery( window ).on('elementor/frontend/init', function() {
 						onSearchComplete: function() {
 							$this.removeClass('search-loading');
 
-							omniverseThemeModule.$document.trigger('wood-images-loaded');
+							omniverseThemeModule.$document.trigger('omni-images-loaded');
 
 						},
 						formatResult    : function(suggestion, currentValue) {
@@ -2778,22 +2778,22 @@ jQuery( window ).on('elementor/frontend/init', function() {
 
 		var pItem = document.getElementsByClassName('wd-lazy-load'), pCount, timer;
 
-		omniverseThemeModule.$document.on('wood-images-loaded added_to_cart updated_checkout', function() {
+		omniverseThemeModule.$document.on('omni-images-loaded added_to_cart updated_checkout', function() {
 			inView();
 		});
 
 		// Fix for menu.
 		omniverseThemeModule.$body.on('click', '.wd-header-mobile-nav > a, .wd-nav-opener, .wd-btn-show-cat', function() {
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 
 		$('.wd-scroll-content').on('scroll', function() {
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 
 		// WooCommerce tabs fix
 		$('.wc-tabs > li').on('click', function() {
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 
 		// scroll and resize events
@@ -2857,15 +2857,15 @@ jQuery( window ).on('elementor/frontend/init', function() {
 
 			if (item.querySelector('img') !== null) {
 				item.querySelector('img').onload = addedImg;
-				item.querySelector('img').src = item.dataset.woodSrc;
-				item.querySelector('source').srcset = item.dataset.woodSrc;
+				item.querySelector('img').src = item.dataset.omniSrc;
+				item.querySelector('source').srcset = item.dataset.omniSrc;
 
 				if (typeof (item.dataset.srcset) != 'undefined') {
 					item.querySelector('img').srcset = item.dataset.srcset;
 				}
 			}
 
-			item.src = item.dataset.woodSrc;
+			item.src = item.dataset.omniSrc;
 			if (typeof (item.dataset.srcset) != 'undefined') {
 				item.srcset = item.dataset.srcset;
 			}
@@ -3092,7 +3092,7 @@ jQuery( window ).on('elementor/frontend/init', function() {
 				}
 			});
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		};
 
 		$('.omniverse-open-newsletter').on('click', function(e) {
@@ -3216,7 +3216,7 @@ observer.observe(document.getElementsByTagName( 'html' )[0], {childList : true, 
 							}, 10);
 
 							omniverseThemeModule.$document.trigger('wdSearchFullScreenContentLoaded');
-							omniverseThemeModule.$document.trigger('wood-images-loaded');
+							omniverseThemeModule.$document.trigger('omni-images-loaded');
 						}
 					},
 					error   : function() {
@@ -3967,7 +3967,7 @@ window.addEventListener('load',function() {
 			} else {
 				$widget.addClass('wd-opened');
 				$content.stop().slideDown(200);
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			}
 		});
 	};
@@ -4829,7 +4829,7 @@ omniverseThemeModule.mobileNavigation = function() {
 					});
 				}
 
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			}
 
 			if (isDropdown) {
@@ -4907,7 +4907,7 @@ omniverseThemeModule.mobileNavigation = function() {
 						}
 					}
 
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				}
 			} else if (isDrilldown) {
 				var wdNavBackLink       = e.target.closest('.menu-item-has-children .wd-drilldown-back a');
@@ -5060,7 +5060,7 @@ omniverseThemeModule.mobileNavigation = function() {
 			closeSide.classList.add('wd-close-side-opened');
 		}
 
-		omniverseThemeModule.$document.trigger('wood-images-loaded');
+		omniverseThemeModule.$document.trigger('omni-images-loaded');
 	}
 }
 
@@ -5321,7 +5321,7 @@ window.addEventListener('load',function() {
 					context.html(html);
 					afterRender();
 					omniverseThemeModule.$document.trigger('wdPortfolioPjaxComplete');
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				});
 			}
 		});
@@ -5345,7 +5345,7 @@ window.addEventListener('load',function() {
 				return;
 			}
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 
 			scrollToTop(false);
 
@@ -5551,7 +5551,7 @@ window.addEventListener('load',function() {
 			var filterValue = $this.attr('data-filter');
 
 			setTimeout(function() {
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			}, 300);
 
 			$filer.find('.wd-active').removeClass('wd-active');
@@ -6716,7 +6716,7 @@ window.addEventListener('load',function() {
 					context.html(html);
 					afterRender();
 					omniverseThemeModule.$document.trigger('wdShopPageInit');
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				});
 			}
 		});
@@ -6735,7 +6735,7 @@ window.addEventListener('load',function() {
 							context.html(html);
 							afterRender();
 							omniverseThemeModule.$document.trigger('wdShopPageInit');
-							omniverseThemeModule.$document.trigger('wood-images-loaded');
+							omniverseThemeModule.$document.trigger('omni-images-loaded');
 						});
 					}
 				});
@@ -6767,10 +6767,10 @@ window.addEventListener('load',function() {
 
 			scrollToTop(false);
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 
 			$('.wd-scroll-content').on('scroll', function() {
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			});
 
 			if (typeof omniverse_wpml_js_data !== 'undefined' && omniverse_wpml_js_data.languages) {
@@ -7048,7 +7048,7 @@ window.addEventListener('load',function() {
 			var openCats = function() {
 				$showCat.addClass('wd-active');
 				$productCat.addClass('categories-opened').stop().slideDown(time);
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			};
 
 			var closeCats = function() {
@@ -7066,7 +7066,7 @@ window.addEventListener('load',function() {
 					$this.addClass('wd-active').closest('.has-sub').find('> ul').slideDown(time).addClass('child-open');
 				}
 
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			});
 
 			$thisCategories.find('.wd-btn-show-cat > a').off('click').on('click', function(e) {
@@ -7077,7 +7077,7 @@ window.addEventListener('load',function() {
 						closeCats();
 					} else {
 						openCats();
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 					}
 				}
 			});
@@ -7526,7 +7526,7 @@ window.addEventListener('load',function() {
 						context.html(html);
 						afterRender();
 						omniverseThemeModule.$document.trigger('wdShopPageInit');
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 					});
 				}
 			});
@@ -7613,7 +7613,7 @@ window.addEventListener('load',function() {
 			omniverseThemeModule.$document.trigger('wdFiltersOpened');
 
 			omniverseThemeModule.$body.removeClass('body-filters-opened');
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		}, time);
 	};
 
@@ -8465,7 +8465,7 @@ window.addEventListener('load',function() {
 						context.html(html);
 						afterRender();
 						omniverseThemeModule.$document.trigger('wdShopPageInit');
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 					});
 				}
 			});
@@ -9368,7 +9368,7 @@ omniverseThemeModule.productImagesGallery = function( replaceGallery = false) {
 				slideChange: function() {
 					gallery.dispatchEvent(new CustomEvent('wdSlideChange', { activeIndex: this.activeIndex}));
 
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				}
 			}
 		};
@@ -9482,7 +9482,7 @@ omniverseThemeModule.productImagesGallery = function( replaceGallery = false) {
 						},
 						on               : {
 							slideChange: function() {
-								omniverseThemeModule.$document.trigger('wood-images-loaded');
+								omniverseThemeModule.$document.trigger('omni-images-loaded');
 							}
 						}
 					},
@@ -9533,7 +9533,7 @@ omniverseThemeModule.productImagesGallery = function( replaceGallery = false) {
 
 			gallery.classList.add('wd-carousel');
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 
 			new wdSwiper(gallery, mainCarouselArg);
 		}
@@ -9680,7 +9680,7 @@ window.addEventListener('load',function() {
 							}
 
 							omniverseThemeModule.$document.trigger('wdRecentlyViewedProductLoaded');
-							omniverseThemeModule.$document.trigger('wood-images-loaded');
+							omniverseThemeModule.$document.trigger('omni-images-loaded');
 						});
 					}
 				},
@@ -10102,7 +10102,7 @@ window.addEventListener('load',function() {
 							holder.parent().trigger('recalc');
 						});
 
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 						omniverseThemeModule.$document.trigger('wdArrowsLoadProducts');
 					}
 
@@ -10178,7 +10178,7 @@ window.addEventListener('load',function() {
 						});
 					}
 
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 					omniverseThemeModule.$document.trigger('wdLoadMoreLoadProducts');
 
 					holder.data('paged', paged);
@@ -10342,7 +10342,7 @@ window.addEventListener('load',function() {
 								$inner.find('.wd-products-element').addClass('wd-in');
 
 								omniverseThemeModule.$document.trigger('wdProductsTabsLoaded');
-								omniverseThemeModule.$document.trigger('wood-images-loaded');
+								omniverseThemeModule.$document.trigger('omni-images-loaded');
 							}, 200);
 
 							$this.removeClass('loading');
@@ -11203,7 +11203,7 @@ window.addEventListener('load',function() {
 		$('body > .tooltip').remove();
 
 		omniverseThemeModule.$body.on('updated_wc_div', function() {
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 
 		omniverseThemeModule.$document.trigger('resize.vcRowBehaviour');
@@ -11275,7 +11275,7 @@ window.addEventListener('load',function() {
 						context.html(html);
 						afterRender();
 						omniverseThemeModule.$document.trigger('wdShopPageInit');
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 					});
 				}
 			});
@@ -11503,7 +11503,7 @@ window.addEventListener('load',function() {
 				$this.parents('.wd-products.grid-masonry').isotope('layout');
 			}
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 	};
 
@@ -13697,7 +13697,7 @@ window.addEventListener('load',function() {
 
 			setTimeout(function() {
 				$activeCompareTable.addClass('wd-in');
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			}, animationTime * 2);
 		});
 
@@ -13754,7 +13754,7 @@ window.addEventListener('load',function() {
 
 					setTimeout(function() {
 						$compareTable.addClass('wd-in');
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 					}, 200);
 				}
 			});

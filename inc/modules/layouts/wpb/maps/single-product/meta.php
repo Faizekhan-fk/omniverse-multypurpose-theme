@@ -88,7 +88,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_single_product_product_meta' ) ) {
 						esc_html__( 'Inline', 'omniverse' )  => 'inline',
 						esc_html__( 'Justify', 'omniverse' ) => 'justify',
 					),
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'group'            => esc_html__( 'Style', 'js_composer' ),
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),

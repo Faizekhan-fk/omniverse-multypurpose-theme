@@ -61,7 +61,7 @@ omniverseThemeModule.productImagesGallery = function( replaceGallery = false) {
 				slideChange: function() {
 					gallery.dispatchEvent(new CustomEvent('wdSlideChange', { activeIndex: this.activeIndex}));
 
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				}
 			}
 		};
@@ -175,7 +175,7 @@ omniverseThemeModule.productImagesGallery = function( replaceGallery = false) {
 						},
 						on               : {
 							slideChange: function() {
-								omniverseThemeModule.$document.trigger('wood-images-loaded');
+								omniverseThemeModule.$document.trigger('omni-images-loaded');
 							}
 						}
 					},
@@ -226,7 +226,7 @@ omniverseThemeModule.productImagesGallery = function( replaceGallery = false) {
 
 			gallery.classList.add('wd-carousel');
 
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 
 			new wdSwiper(gallery, mainCarouselArg);
 		}

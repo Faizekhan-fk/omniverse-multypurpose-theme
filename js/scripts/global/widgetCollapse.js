@@ -31,7 +31,7 @@
 			} else {
 				$widget.addClass('wd-opened');
 				$content.stop().slideDown(200);
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			}
 		});
 	};

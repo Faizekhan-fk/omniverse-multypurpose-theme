@@ -466,7 +466,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_brands' ) ) {
 						'right'  => OMNIVERSE_ASSETS_IMAGES . '/settings/align/right.jpg',
 					),
 					'std'              => '',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column title-align',
 				),
 				array(

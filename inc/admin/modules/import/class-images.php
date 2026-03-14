@@ -55,11 +55,11 @@ class Images {
 		'augue-adipiscing-euismod',
 		'iphone-dock',
 		'wine-bottle-lantern',
-		'decoration-wooden-present',
+		'decoration-omnien-present',
 		'panton-tunior-chair',
-		'smart-watches-wood-edition',
-		'wooden-single-drawer',
-		'classic-wooden-chair',
+		'smart-watches-omni-edition',
+		'omnien-single-drawer',
+		'classic-omnien-chair',
 		'eames-lounge-chair',
 	);
 	/**

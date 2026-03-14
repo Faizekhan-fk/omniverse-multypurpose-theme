@@ -27,7 +27,7 @@
 			var openCats = function() {
 				$showCat.addClass('wd-active');
 				$productCat.addClass('categories-opened').stop().slideDown(time);
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			};
 
 			var closeCats = function() {
@@ -45,7 +45,7 @@
 					$this.addClass('wd-active').closest('.has-sub').find('> ul').slideDown(time).addClass('child-open');
 				}
 
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			});
 
 			$thisCategories.find('.wd-btn-show-cat > a').off('click').on('click', function(e) {
@@ -56,7 +56,7 @@
 						closeCats();
 					} else {
 						openCats();
-						omniverseThemeModule.$document.trigger('wood-images-loaded');
+						omniverseThemeModule.$document.trigger('omni-images-loaded');
 					}
 				}
 			});

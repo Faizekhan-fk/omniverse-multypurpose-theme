@@ -69,7 +69,7 @@ omniverseThemeModule.mobileNavigation = function() {
 					});
 				}
 
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			}
 
 			if (isDropdown) {
@@ -147,7 +147,7 @@ omniverseThemeModule.mobileNavigation = function() {
 						}
 					}
 
-					omniverseThemeModule.$document.trigger('wood-images-loaded');
+					omniverseThemeModule.$document.trigger('omni-images-loaded');
 				}
 			} else if (isDrilldown) {
 				var wdNavBackLink       = e.target.closest('.menu-item-has-children .wd-drilldown-back a');
@@ -300,7 +300,7 @@ omniverseThemeModule.mobileNavigation = function() {
 			closeSide.classList.add('wd-close-side-opened');
 		}
 
-		omniverseThemeModule.$document.trigger('wood-images-loaded');
+		omniverseThemeModule.$document.trigger('omni-images-loaded');
 	}
 }
 

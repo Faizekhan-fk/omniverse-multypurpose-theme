@@ -124,7 +124,7 @@ class Author_Area extends Widget_Base {
 			[
 				'label'   => esc_html__( 'Author name', 'omniverse' ),
 				'type'    => Controls_Manager::TEXT,
-				'default' => 'Nicolas Wood',
+				'default' => 'Nicolas Omni',
 			]
 		);
 

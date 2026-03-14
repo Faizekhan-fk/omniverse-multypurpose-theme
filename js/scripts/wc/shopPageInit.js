@@ -10,7 +10,7 @@
 		$('body > .tooltip').remove();
 
 		omniverseThemeModule.$body.on('updated_wc_div', function() {
-			omniverseThemeModule.$document.trigger('wood-images-loaded');
+			omniverseThemeModule.$document.trigger('omni-images-loaded');
 		});
 
 		omniverseThemeModule.$document.trigger('resize.vcRowBehaviour');

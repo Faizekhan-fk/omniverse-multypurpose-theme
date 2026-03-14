@@ -9,7 +9,7 @@ namespace DN\Admin\Modules\Import;
 
 use Elementor\Plugin;
 use Exception;
-use WOODCORE_Import;
+use OMNICORE_Import;
 
 if ( ! defined( 'OMNIVERSE_THEME_DIR' ) ) {
 	exit( 'No direct script access allowed' );
@@ -113,7 +113,7 @@ class XML {
 	/**
 	 * Load importers.
 	 *
-	 * @return WOODCORE_Import|bool;
+	 * @return OMNICORE_Import|bool;
 	 */
 	private function get_importer() {
 		require_once ABSPATH . 'wp-admin/includes/import.php';
@@ -164,8 +164,8 @@ class XML {
 			return false;
 		}
 
-		if ( class_exists( 'WP_Importer' ) && class_exists( 'WOODCORE_Import' ) ) {
-			return new WOODCORE_Import();
+		if ( class_exists( 'WP_Importer' ) && class_exists( 'OMNICORE_Import' ) ) {
+			return new OMNICORE_Import();
 		} else {
 			echo esc_html( '[ERROR] Importer not exists<br>' );
 

@@ -70,7 +70,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_products_tabs' ) ) {
 						'aside'   => OMNIVERSE_ASSETS_IMAGES . '/settings/ajax-tabs/aside.png',
 					),
 					'std'              => 'default',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-xs-12 vc_column tab-design',
 				),
 				array(
@@ -202,7 +202,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_products_tabs' ) ) {
 						'value'   => array( 'default' ),
 					),
 					'std'              => 'center',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column title-align',
 				),
 				/**
@@ -310,7 +310,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_products_tabs' ) ) {
 						'right' => OMNIVERSE_ASSETS_IMAGES . '/settings/infobox/position/right.png',
 					),
 					'std'              => 'left',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'dependency'       => array(
 						'element'            => 'design',
 						'value_not_equal_to' => 'default',
@@ -333,7 +333,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_products_tabs' ) ) {
 						'right' => OMNIVERSE_ASSETS_IMAGES . '/settings/infobox/position/right.png',
 					),
 					'std'              => 'top',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'dependency'       => array(
 						'element' => 'design',
 						'value'   => 'default',

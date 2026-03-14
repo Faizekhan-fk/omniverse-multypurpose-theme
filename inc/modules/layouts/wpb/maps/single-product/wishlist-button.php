@@ -80,7 +80,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_single_product_wishlist_button' ) 
 						'text' => OMNIVERSE_ASSETS_IMAGES . '/settings/icon-style/icon-with-text.jpg',
 						'icon' => OMNIVERSE_ASSETS_IMAGES . '/settings/icon-style/only-icon.jpg',
 					),
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
 

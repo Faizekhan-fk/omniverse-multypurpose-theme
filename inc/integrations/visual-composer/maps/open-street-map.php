@@ -355,7 +355,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_open_street_map' ) ) {
 						'right'  => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/horizontal/right.png',
 					),
 					'std'              => 'left',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column content-position',
 				),
 				array(
@@ -374,7 +374,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_open_street_map' ) ) {
 						'bottom' => OMNIVERSE_ASSETS_IMAGES . '/settings/content-align/vertical/bottom.png',
 					),
 					'std'              => 'top',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column content-position',
 				),
 				array(

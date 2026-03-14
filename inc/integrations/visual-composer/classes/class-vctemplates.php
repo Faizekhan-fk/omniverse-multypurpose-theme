@@ -2,7 +2,7 @@
 
 namespace DN;
 
-use WOODCORE_Import;
+use OMNICORE_Import;
 use WPBMap;
 
 if ( ! defined( 'OMNIVERSE_THEME_DIR' ) ) {
@@ -368,12 +368,12 @@ HTML;
 			return false;
 		}
 
-		if ( class_exists( 'WP_Importer' ) && class_exists( 'WOODCORE_Import' ) ) {
+		if ( class_exists( 'WP_Importer' ) && class_exists( 'OMNICORE_Import' ) ) {
 
-			$this->_importer                    = new WOODCORE_Import();
+			$this->_importer                    = new OMNICORE_Import();
 			$this->_importer->fetch_attachments = true;
 		} else {
-			// $this->response->send_fail_msg( 'Can\'t find WP_Importer or WOODCORE_Import class' );
+			// $this->response->send_fail_msg( 'Can\'t find WP_Importer or OMNICORE_Import class' );
 			return false;
 		}
 	}

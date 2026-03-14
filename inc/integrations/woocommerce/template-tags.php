@@ -2096,7 +2096,7 @@ if ( ! function_exists( 'omniverse_login_form' ) ) {
 
 						omniverse_enqueue_inline_style( 'woo-opt-social-login' );
 					?>
-					<p class="title wd-login-divider<?php echo omniverse_get_old_classes( ' wood-login-divider' ); ?>"><span><?php esc_html_e( 'Or login with', 'omniverse' ); ?></span></p>
+					<p class="title wd-login-divider<?php echo omniverse_get_old_classes( ' omni-login-divider' ); ?>"><span><?php esc_html_e( 'Or login with', 'omniverse' ); ?></span></p>
 					<div class="wd-social-login">
 						<?php if ( ! empty( $fb_app_id ) && ! empty( $fb_app_secret ) ) : ?>
 							<a href="<?php echo esc_url( str_replace( '{{SOCIAL}}', 'facebook', $social_url ) ); ?>" class="login-fb-link btn">

@@ -287,7 +287,7 @@ class Import extends Singleton {
 								<div class="dn-import-item-wrap dn-cat-show dn-col-6 dn-col-xl-4 <?php echo esc_attr( $item_wrap_classes ); ?>">
 									<div class="dn-import-item <?php echo esc_attr( $item_classes ); ?>" data-version="<?php echo esc_attr( $slug ); ?>" data-base="<?php echo esc_attr( $base ); ?>" data-type="<?php echo esc_attr( $type ); ?>" data-tags="<?php echo esc_attr( $tags ); ?>" data-cats="<?php echo esc_attr( implode( ',', $categories_array ) ); ?>" data-business="<?php echo $b_type; ?>">
 										<div class="dn-import-item-image">
-											<img data-wood-src="<?php echo esc_url( OMNIVERSE_DUMMY_URL . $slug . '/preview.jpg' ); ?>" src="<?php echo esc_url( omniverse_lazy_get_default_preview() ); ?>" class="wd-lazy-load wd-lazy-fade" alt="<?php echo esc_attr__( 'Import preview', 'omniverse' ); ?>">
+											<img data-omni-src="<?php echo esc_url( OMNIVERSE_DUMMY_URL . $slug . '/preview.jpg' ); ?>" src="<?php echo esc_url( omniverse_lazy_get_default_preview() ); ?>" class="wd-lazy-load wd-lazy-fade" alt="<?php echo esc_attr__( 'Import preview', 'omniverse' ); ?>">
 											<div class="dn-box-labels">
 												<?php if ( 'main' === $slug ) : ?>
 													<div class="dn-box-label dn-label-default dn-i-flag">

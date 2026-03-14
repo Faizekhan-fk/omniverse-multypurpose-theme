@@ -113,7 +113,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_ajax_search' ) ) {
 						'4'         => OMNIVERSE_ASSETS_IMAGES . '/header-builder/search/fourth.jpg',
 					),
 					'std'              => 'default',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-12 vc_column wd-form-style',
 				),
 				array(

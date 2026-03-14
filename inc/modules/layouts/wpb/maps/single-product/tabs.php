@@ -721,7 +721,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_single_product_tabs' ) ) {
 						esc_html__( 'Grid', 'omniverse' )   => 'grid',
 						esc_html__( 'Inline', 'omniverse' ) => 'inline',
 					),
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column',
 				),
 

@@ -3,12 +3,12 @@
 		{
 			"id": "image1",
 			"type": "external-image",
-			"src": "http://dev.zynxsol.com/wood/wp-content/uploads/2022/02/materials.svg"
+			"src": "http://dev.zynxsol.com/omni/wp-content/uploads/2022/02/materials.svg"
 		},
 		{
 			"id": "image2",
 			"type": "external-image",
-			"src": "http://dev.zynxsol.com/wood/wp-content/uploads/2022/02/warranty.svg"
+			"src": "http://dev.zynxsol.com/omni/wp-content/uploads/2022/02/warranty.svg"
 		}
 	]
 }

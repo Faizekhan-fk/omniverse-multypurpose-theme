@@ -316,7 +316,7 @@ if ( ! function_exists( 'omniverse_get_vc_map_testimonials' ) ) {
 						'value_not_equal_to' => array( 'info-top' ),
 					),
 					'std'              => 'center',
-					'wood_tooltip'     => true,
+					'omni_tooltip'     => true,
 					'edit_field_class' => 'vc_col-sm-6 vc_column title-align',
 				),
 				array(

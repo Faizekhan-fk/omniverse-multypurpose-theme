@@ -20,7 +20,7 @@
 			var filterValue = $this.attr('data-filter');
 
 			setTimeout(function() {
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			}, 300);
 
 			$filer.find('.wd-active').removeClass('wd-active');

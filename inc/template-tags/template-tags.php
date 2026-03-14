@@ -2148,7 +2148,7 @@ if ( ! function_exists( 'omniverse_get_twitts' ) ) {
 			$args['accesstoken_secret'] // Access token secret
 		);
 
-		$posts_data_transient_name = 'wood-twitter-posts-data-' . sanitize_title_with_dashes( $args['name'] . $args['num_tweets'] . $args['exclude_replies'] );
+		$posts_data_transient_name = 'omni-twitter-posts-data-' . sanitize_title_with_dashes( $args['name'] . $args['num_tweets'] . $args['exclude_replies'] );
 		$fetchedTweets             = maybe_unserialize( base64_decode( get_transient( $posts_data_transient_name ) ) );
 
 		if ( ! $fetchedTweets ) {
@@ -2167,7 +2167,7 @@ if ( ! function_exists( 'omniverse_get_twitts' ) ) {
 			}
 
 			$encode_posts = base64_encode( maybe_serialize( $fetchedTweets ) );
-			set_transient( $posts_data_transient_name, $encode_posts, apply_filters( 'wood_twitter_cache_time', HOUR_IN_SECONDS * 2 ) );
+			set_transient( $posts_data_transient_name, $encode_posts, apply_filters( 'omni_twitter_cache_time', HOUR_IN_SECONDS * 2 ) );
 		}
 
 		if ( ! $fetchedTweets ) {

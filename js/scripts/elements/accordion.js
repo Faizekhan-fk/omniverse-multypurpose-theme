@@ -53,7 +53,7 @@
 				$wrapper.addClass('wd-inited');
 
 				omniverseThemeModule.$document.trigger('resize.vcRowBehaviour');
-				omniverseThemeModule.$document.trigger('wood-images-loaded');
+				omniverseThemeModule.$document.trigger('omni-images-loaded');
 			};
 
 			var deactivateActiveTab = function() {
