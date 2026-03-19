@@ -22,7 +22,7 @@ define( 'OMNIVERSE_PLUGINS_URL', OMNIVERSE_DEMO_URL . 'plugins/' );
 define( 'OMNIVERSE_DUMMY_URL', OMNIVERSE_DEMO_URL . 'dummy-content/' );
 define( 'OMNIVERSE_TOOLTIP_URL', OMNIVERSE_DEMO_URL . 'theme-settings-tooltips/' );
 define( 'OMNIVERSE_SLUG', 'omniverse' );
-define( 'OMNIVERSE_CORE_VERSION', '1.1.2' );
+define( 'OMNIVERSE_CORE_VERSION', '1.1.3' );
 define( 'OMNIVERSE_WPB_CSS_VERSION', '1.0.2' );
 
 if ( ! function_exists( 'omniverse_load_classes' ) ) {

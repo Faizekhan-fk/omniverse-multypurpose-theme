@@ -281,6 +281,10 @@ if ( ! function_exists( 'omniverse_enqueue_admin_styles' ) ) {
 		if ( isset( $_GET['tab'] ) && 'wizard' === $_GET['tab'] || 'zs_business_type' === @$_GET['page'] ) { //phpcs:ignore
 			wp_enqueue_style( 'wd-admin-page-setup-wizard', OMNIVERSE_ASSETS . '/css/parts/page-setup-wizard.min.css', array(), OMNIVERSE_VERSION );
 		}
+		
+		if ( isset( $_GET['tab'] ) && 'wizard' === $_GET['tab'] || 'zs_page_builder' === @$_GET['page'] ) { //phpcs:ignore
+			wp_enqueue_style( 'wd-admin-page-setup-wizard', OMNIVERSE_ASSETS . '/css/parts/page-setup-wizard.min.css', array(), OMNIVERSE_VERSION );
+		}
 
 		if ( isset( $_GET['page'] ) && 'zs_license' === $_GET['page'] || isset( $_GET['tab'], $_GET['step'] ) && 'activation' === $_GET['step'] ) { //phpcs:ignore
 			wp_enqueue_style( 'wd-admin-page-theme-license', OMNIVERSE_ASSETS . '/css/parts/page-theme-license.min.css', array(), OMNIVERSE_VERSION );

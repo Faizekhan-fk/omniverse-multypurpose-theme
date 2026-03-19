@@ -351,7 +351,7 @@ if( ! function_exists( 'omniverse_register_required_plugins' ) ) {
 	        array(
 	            'name'               => 'Omniverse Core', // The plugin name.
 	            'slug'               => 'omniverse-core', // The plugin slug (typically the folder name).
-	            'source'             => get_parent_theme_file_path( OMNIVERSE_FRAMEWORK . '/plugins/omniverse-core.zip' ), // The plugin source.
+	            'source'             => OMNIVERSE_PLUGINS_URL . 'omniverse-core.zip', // The plugin source.
 	            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 	            'version'            => OMNIVERSE_CORE_VERSION, // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 	            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.

@@ -64,15 +64,6 @@
 									<?php esc_html_e( 'Video tutorials' ); ?>
 								</a>
 							</div>
-
-							<div class="dn-col">
-								<div class="dn-info-box-img">
-									<img src="<?php echo esc_url( OMNIVERSE_ASSETS_IMAGES . '/dashboard/support forum.webp' ); ?>" alt="forum banner">
-								</div>
-								<a href="https://zynxsol.com/forums/forum/omniverse-premium-template/" class="dn-bordered-btn dn-color-default" target="_blank">
-									<?php esc_html_e( 'Support forum' ); ?>
-								</a>
-							</div>
 							
 							<div class="dn-col">
 								<div class="dn-info-box-img">

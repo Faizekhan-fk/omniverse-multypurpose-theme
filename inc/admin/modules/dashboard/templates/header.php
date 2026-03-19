@@ -64,6 +64,16 @@ if ( omniverse_get_opt( 'white_label' ) ) {
 						),
 						array(
 							'link'      => array(
+								'url' => admin_url( 'admin.php?page=zs_page_builder' ),
+							),
+							'type'      => 'page',
+							'slug'      => 'zs_page_builder',
+							'icon'      => 'dummy-content',
+							'condition' => omniverse_get_opt( 'dummy_import', '1' ) && current_user_can( apply_filters( 'omniverse_capability_menu_page', 'manage_options', 'zs_page_builder' ) ),
+							'text'      => esc_html__( 'Page Builder', 'omniverse' ),
+						),
+						array(
+							'link'      => array(
 								'url' => admin_url( 'admin.php?page=zs_business_type' ),
 							),
 							'type'      => 'page',

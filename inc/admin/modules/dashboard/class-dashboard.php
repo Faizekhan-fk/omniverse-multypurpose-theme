@@ -439,6 +439,18 @@ class Dashboard extends Singleton {
 		if ( omniverse_get_opt( 'dummy_import', '1' ) ) {
 			add_submenu_page(
 				'zs_dashboard',
+				esc_html__( 'Page Builder', 'omniverse' ),
+				esc_html__( 'Page Builder', 'omniverse' ),
+				apply_filters( 'omniverse_capability_menu_page', 'manage_options', 'zs_page_builder' ),
+				'zs_page_builder',
+				array( $this, 'page_content' ),
+				4
+			);
+		}
+		
+		if ( omniverse_get_opt( 'dummy_import', '1' ) ) {
+			add_submenu_page(
+				'zs_dashboard',
 				esc_html__( 'Business Type', 'omniverse' ),
 				esc_html__( 'Business Type', 'omniverse' ),
 				apply_filters( 'omniverse_capability_menu_page', 'manage_options', 'zs_business_type' ),
@@ -580,6 +592,7 @@ class Dashboard extends Singleton {
 			'zs_theme_settings',
 			'zs_prebuilt_websites',
 			'zs_header_builder',
+			'zs_page_builder',
 			'zs_business_type',
 			'zs_license',
 			'zs_wpb_css_generator',
